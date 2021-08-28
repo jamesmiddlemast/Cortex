@@ -8,6 +8,7 @@ public class CharController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 4f;
 
+    //Vectors for forward and right movements.
     Vector3 forward, right;
 
     // Start is called before the first frame update
@@ -35,16 +36,16 @@ public class CharController : MonoBehaviour
 
     //Main Movement Function
     void Move(){
-        //Set Movement
+        //Set Movement per direction, based off moveSpeed, time, and the input weights/axii
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
         Vector3 forwardMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
 
+        //Make the player face forwards
         Vector3 heading = Vector3.Normalize(rightMovement + forwardMovement);
-
         transform.forward = heading;
 
+        //Move the player
         transform.position += rightMovement;
         transform.position += forwardMovement;
-        
     }
 }
