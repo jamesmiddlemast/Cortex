@@ -6,7 +6,15 @@ public class CharController : MonoBehaviour
 {
 
     [SerializeField]
+    //Walk and crouch speeds.
+    float walkSpeed = 5f;
+    float crouchSpeed = 2f;
+
+    //Start at walk speed
     float moveSpeed = 4f;
+
+    //Flag for whether the player is crouched.3
+    bool isCrouched = false;
 
     //Vectors for forward and right movements.
     Vector3 forward, right;
@@ -32,6 +40,11 @@ public class CharController : MonoBehaviour
         if (Input.anyKey){
             Move();
         }
+
+        //Check for Ctrl press (Crouch)
+        if (Input.GetKey(KeyCode.LeftControl)){
+            Crouch();
+        }
     }
 
     //Main Movement Function
@@ -47,5 +60,20 @@ public class CharController : MonoBehaviour
         //Move the player
         transform.position += rightMovement;
         transform.position += forwardMovement;
+    }
+
+    //Toggle Crouch Function
+    void Crouch(){
+        //Check whether already crouching
+        if (isCrouched){
+            //If so, stand up and retain walk speed
+            isCrouched = false;
+            moveSpeed = walkSpeed;
+        } else {
+            //If not, crouch.
+            isCrouched = true;
+            moveSpeed = crouchSpeed;
+        }
+
     }
 }
