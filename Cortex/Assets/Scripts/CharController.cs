@@ -52,12 +52,12 @@ public class CharController : MonoBehaviour
         }
 
         //Check for Ctrl press (Crouch)
-        if (Input.GetKey(KeyCode.LeftControl)){
+        if (Input.GetKeyDown(KeyCode.LeftControl)){
             Crouch();
         }
 
         //Check for Space press (BodyJump)
-        if (Input.GetKey(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space)){
             // ----- TODO -----
             // Adjust this to allow targeting a specific enemy rather than just grabing the first tagged object
             // Identify Target
@@ -101,7 +101,15 @@ public class CharController : MonoBehaviour
         transform.position = body.transform.position;
         transform.parent = body.transform;
 
+        //Destroy the current body
+        Destroy(this.currentBody);
+
         //Set the new body as the current body
         currentBody = body;
+
+        //Reset Crouch
+        if (isCrouched){
+            Crouch();
+        }
     }
 }
