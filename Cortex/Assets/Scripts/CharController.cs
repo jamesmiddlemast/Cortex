@@ -6,18 +6,24 @@ public class CharController : MonoBehaviour
 {
 
     [SerializeField]
-    //Walk and crouch speeds.
-    float walkSpeed = 5f;
-    float crouchSpeed = 2f;
+    //Movement
+        //Walk and crouch speeds.
+        float walkSpeed = 5f;
+        float crouchSpeed = 2f;
+        //Start at walk speed
+        float moveSpeed = 4f;
+        //Vectors for forward and right movements.
+        Vector3 forward, right;
 
-    //Start at walk speed
-    float moveSpeed = 4f;
+    //Crouching
+        //Flag for whether the player is crouched.3
+        bool isCrouched = false;
 
-    //Flag for whether the player is crouched.3
-    bool isCrouched = false;
-
-    //Vectors for forward and right movements.
-    Vector3 forward, right;
+    //BodyJumping
+        //Define the player's current body
+        GameObject currentBody;   
+        //Define the current jump target
+        GameObject targetBody;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +37,10 @@ public class CharController : MonoBehaviour
 
         //Set Right direction
         right = Quaternion.Euler(new Vector3(0,90,0)) * forward;
+
+        //Identify and Jump into the initial detective's body
+        GameObject initialBody = GameObject.FindGameObjectsWithTag("InitialPlayerBody")[0];
+        Jump(initialBody);
     }
 
     // Update is called once per frame
@@ -45,6 +55,16 @@ public class CharController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl)){
             Crouch();
         }
+
+        //Check for Space press (BodyJump)
+        if (Input.GetKey(KeyCode.Space)){
+            // ----- TODO -----
+            // Adjust this to allow targeting a specific enemy rather than just grabing the first tagged object
+            // Identify Target
+            targetBody = GameObject.FindGameObjectsWithTag("Enemy")[0];
+            //Jump to target
+            Jump(targetBody);
+        }
     }
 
     //Main Movement Function
@@ -53,13 +73,13 @@ public class CharController : MonoBehaviour
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
         Vector3 forwardMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
 
-        //Make the player face forwards
+        //Make the player's body face forwards
         Vector3 heading = Vector3.Normalize(rightMovement + forwardMovement);
-        transform.forward = heading;
+        currentBody.transform.forward = heading;
 
-        //Move the player
-        transform.position += rightMovement;
-        transform.position += forwardMovement;
+        //Move the player's body
+        currentBody.transform.position += rightMovement;
+        currentBody.transform.position += forwardMovement;
     }
 
     //Toggle Crouch Function
@@ -74,6 +94,14 @@ public class CharController : MonoBehaviour
             isCrouched = true;
             moveSpeed = crouchSpeed;
         }
+    }
 
+    void Jump(GameObject body){
+        //Move to the new body
+        transform.position = body.transform.position;
+        transform.parent = body.transform;
+
+        //Set the new body as the current body
+        currentBody = body;
     }
 }
