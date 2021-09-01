@@ -41,6 +41,9 @@ public class CharController : MonoBehaviour
         //Identify and Jump into the initial detective's body
         GameObject initialBody = GameObject.FindGameObjectsWithTag("PlayerBody")[0];
         Jump(initialBody);
+
+        //Setup Enemy's Field of view to original value
+        FieldOfView.radius = 7f;
     }
 
     // Update is called once per frame
@@ -89,10 +92,14 @@ public class CharController : MonoBehaviour
             //If so, stand up and retain walk speed
             isCrouched = false;
             moveSpeed = walkSpeed;
+            //Also set enemie's view radius back to normal.
+            FieldOfView.radius = 7f;
         } else {
             //If not, crouch.
             isCrouched = true;
             moveSpeed = crouchSpeed;
+            //Shrink Enemy's view radius.
+            FieldOfView.radius = 4f;
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
-    public float radius;
+    public static float radius;
     [Range(0,360)]
     public float angle;
 
