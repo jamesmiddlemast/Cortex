@@ -15,11 +15,10 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer;
-    public bool canSeeSomething;
 
     private void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("InitialPlayerBody");
+        playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
     }
 
@@ -40,7 +39,6 @@ public class FieldOfView : MonoBehaviour
 
         if (rangeChecks.Length != 0)
         {
-            canSeeSomething = true;
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 

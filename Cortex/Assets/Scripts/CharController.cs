@@ -39,7 +39,7 @@ public class CharController : MonoBehaviour
         right = Quaternion.Euler(new Vector3(0,90,0)) * forward;
 
         //Identify and Jump into the initial detective's body
-        GameObject initialBody = GameObject.FindGameObjectsWithTag("InitialPlayerBody")[0];
+        GameObject initialBody = GameObject.FindGameObjectsWithTag("PlayerBody")[0];
         Jump(initialBody);
     }
 
@@ -58,12 +58,12 @@ public class CharController : MonoBehaviour
 
         //Check for Space press (BodyJump)
         if (Input.GetKeyDown(KeyCode.Space)){
-            // ----- TODO -----
-            // Adjust this to allow targeting a specific enemy rather than just grabing the first tagged object
-            // Identify Target
-            targetBody = GameObject.FindGameObjectsWithTag("Enemy")[0];
-            //Jump to target
-            Jump(targetBody);
+            // Identify Target, Check if a target is visible and jump to them
+            if (PlayerFieldOfView.canSeeTarget == true){
+                targetBody = PlayerFieldOfView.targetBody;
+                //Jump to target
+                Jump(targetBody);
+            }
         }
     }
 
@@ -107,9 +107,17 @@ public class CharController : MonoBehaviour
         //Set the new body as the current body
         currentBody = body;
 
+        //Set the new body's Mask as the Player's Mask (for enemy targeting)
+        body.layer = 8;
+
+        //Set the new body's Tag as the Player
+        body.tag = "PlayerBody";
         //Reset Crouch
         if (isCrouched){
             Crouch();
         }
+
+        //Need to set the player's rotation aligned with the new body's rotation.
+        transform.rotation = body.transform.rotation;
     }
 }
