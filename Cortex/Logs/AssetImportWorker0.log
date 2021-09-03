@@ -432,3 +432,74 @@ System memory in use after: 73.2 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1624.
 Total: 1.620900 ms (FindLiveObjects: 0.127700 ms CreateObjectMapping: 0.036600 ms MarkObjects: 1.376900 ms  DeleteObjects: 0.078900 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000711 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.829 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.3 MB.
+System memory in use after: 73.4 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1626.
+Total: 2.549200 ms (FindLiveObjects: 0.133000 ms CreateObjectMapping: 0.043300 ms MarkObjects: 2.300500 ms  DeleteObjects: 0.070600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 2275.541160 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(f2e91586c5b41ee4286f501d2a5d98dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(f2e91586c5b41ee4286f501d2a5d98dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '307c961e877afcb226dec9e6cc874e84') in 0.009177 seconds
+  Import took 0.011314 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000773 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.19 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.845 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1101 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.6 MB.
+System memory in use after: 73.7 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1628.
+Total: 1.454100 ms (FindLiveObjects: 0.140000 ms CreateObjectMapping: 0.042400 ms MarkObjects: 1.200500 ms  DeleteObjects: 0.070200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 687.313555 seconds.
+  path: Assets/Materials/New Material.mat
+  artifactKey: Guid(da7a04ae753f32f448c8502e9c16de3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/New Material.mat using Guid(da7a04ae753f32f448c8502e9c16de3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ac4e210b6e6145222f2e24e6105244e') in 0.063925 seconds
+  Import took 0.065742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.860931 seconds.
+  path: Assets/Scenes/Demo.unity
+  artifactKey: Guid(6c40f6e90086b684c86401cefb477ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Demo.unity using Guid(6c40f6e90086b684c86401cefb477ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c980c82cc6e45d25a2103f1c13a0cb05') in 0.007181 seconds
+  Import took 0.009150 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
