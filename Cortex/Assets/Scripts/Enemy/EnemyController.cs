@@ -7,7 +7,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     //Movement Speeds
     float walkSpeed;
-    [SerializeField]
     float turnSpeed;
     [SerializeField]
     //Guarding time.
