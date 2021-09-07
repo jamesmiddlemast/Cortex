@@ -44,8 +44,13 @@ public class CharController : MonoBehaviour
         right = Quaternion.Euler(new Vector3(0,90,0)) * forward;
 
         //Identify and Jump into the initial detective's body
-        GameObject initialBody = GameObject.FindGameObjectsWithTag("PlayerBody")[0];
-        Jump(initialBody);
+        currentBody = GameObject.FindGameObjectsWithTag("PlayerBody")[0];
+        //Jump(initialBody);
+        //Set the new body's Mask as the Player's Mask (for enemy targeting)
+        currentBody.layer = 8;
+
+        //Set the new body's Tag as the Player
+        currentBody.tag = "PlayerBody";
 
         //Setup Enemy's Field of view to original value
         FieldOfView.radius = 7f;
@@ -114,32 +119,34 @@ public class CharController : MonoBehaviour
 
     void Jump(GameObject body){
         //Move to the new body
-        transform.position = body.transform.position;
-        transform.parent = body.transform;
+        currentBody.transform.position = body.transform.position;
 
-        //Destroy the current body
-        Destroy(this.currentBody);
+        //No longer Destroy the current body
+        //Destroy(this.currentBody);
 
-        //Set the new body as the current body
-        currentBody = body;
-
+        //No longer replace the bodySet the new body as the current body
+        //currentBody = body;
         //Set the new body's Mask as the Player's Mask (for enemy targeting)
-        body.layer = 8;
+        //body.layer = 8;
 
         //Set the new body's Tag as the Player
-        body.tag = "PlayerBody";
+        //body.tag = "PlayerBody";
+
         //Reset Crouch
         if (isCrouched){
             Crouch();
         }
 
         //Need to set the player's rotation aligned with the new body's rotation.
-        transform.rotation = body.transform.rotation;
+        currentBody.transform.rotation = body.transform.rotation;
 
         //Need to disable the new body's fieldofview script.
-        FieldOfView fovScript = body.GetComponent<FieldOfView>();
-        if (fovScript != null){
-            Destroy(fovScript);
-        }
+        //FieldOfView fovScript = body.GetComponent<FieldOfView>();
+        //if (fovScript != null){
+        //    Destroy(fovScript);
+        //}
+
+        //Need to destroy the enemy body
+        Destroy(body);
     }
 }
