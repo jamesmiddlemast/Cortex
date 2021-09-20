@@ -17,12 +17,20 @@ public class EnemyController : MonoBehaviour
     int currentWaypoint = 0;
     public GameObject[] waypoints;
 
+    //Glow when seen
+    public bool isGlowing;
+    //Materials for when Glowing
+    public Material defaultMaterial;
+    public Material glowingMaterial;
+    
+
     [SerializeField]
     bool repeatPatrol;
 
     float waypointThreshold = 1.0f;
     float faceTime = 3;
     float currentFaceTime;
+
 
     //Using Finite State Machine
     /* Enemy States
@@ -44,6 +52,7 @@ public class EnemyController : MonoBehaviour
         } else {
             enemyState = "Patrolling";
         }
+        isGlowing = false;
     }
 
     // Update is called once per frame
@@ -64,6 +73,13 @@ public class EnemyController : MonoBehaviour
                 break;
             case "Finished":
                 break;
+        }
+
+        //Glow when seen (This can be optimised, change the bool to a function the player calls instead)
+        if (isGlowing){
+            this.gameObject.GetComponent<MeshRenderer>().material = glowingMaterial;
+        } else {
+            this.gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
         }
     }
 

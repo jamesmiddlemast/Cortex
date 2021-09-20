@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharController : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class CharController : MonoBehaviour
         public static int health_jumps = 3;
     //Integrity of the Memory
         public static float integrity = 0.0f;
+        [SerializeField]
+        float max_integrity;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +57,9 @@ public class CharController : MonoBehaviour
 
         //Setup Enemy's Field of view to original value
         FieldOfView.radius = 7f;
+
+        //Reset Integrity
+        integrity = 0.0f;
     }
 
     // Update is called once per frame
@@ -81,6 +87,11 @@ public class CharController : MonoBehaviour
                     Jump(targetBody);
                 }
             }
+        }
+
+        //Check Whether Integrity has been breached
+        if (integrity > max_integrity){
+            SceneManager.LoadScene("EndMenu");
         }
     }
 

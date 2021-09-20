@@ -15,11 +15,12 @@ public class PlayerFieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
+
     public static bool canSeeTarget;
 
     private void Start()
     {
-        playerRef = GameObject.FindGameObjectWithTag("Enemy");
+        //playerRef = GameObject.FindGameObjectWithTag("Enemy");
         StartCoroutine(FOVRoutine());
     }
 
@@ -50,15 +51,23 @@ public class PlayerFieldOfView : MonoBehaviour
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)){
                     canSeeTarget = true;
                     targetBody = target.gameObject;
+                    //Set Target's material to glowin.
+                    targetBody.GetComponent<EnemyController>().isGlowing = true;
                     playerRef = targetBody;
                 }
-                else
+                else{
                     canSeeTarget = false;
+                    targetBody.GetComponent<EnemyController>().isGlowing = false;
+                }
             }
-            else
+            else{
                 canSeeTarget = false;
+                targetBody.GetComponent<EnemyController>().isGlowing = false;
+            }
         }
-        else if (canSeeTarget)
+        else if (canSeeTarget){
             canSeeTarget = false;
+            targetBody.GetComponent<EnemyController>().isGlowing = false;
+        }
     }
 }

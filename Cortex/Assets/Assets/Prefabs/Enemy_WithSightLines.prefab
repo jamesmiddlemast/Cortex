@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 5108971546024152967}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 34.005, z: 0}
 --- !u!120 &82257682
 LineRenderer:
@@ -158,7 +158,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 5108971546024152967}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -71.512, z: 0}
 --- !u!120 &1593975670
 LineRenderer:
@@ -287,7 +287,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 7}
   m_Children: []
   m_Father: {fileID: 5108971546024152967}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -34.005, z: 0}
 --- !u!120 &1604456758
 LineRenderer:
@@ -416,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 5108971546024152967}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 71.512, z: 0}
 --- !u!120 &1816857452
 LineRenderer:
@@ -551,9 +551,17 @@ PrefabInstance:
       propertyPath: m_BounceIntensity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: defaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 511911831ab53bc4bb3ec0a81c5a8368, type: 2}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: glowingMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 8cf7e9cf08bd6ec46b2d9b6d13f6360a, type: 2}
     - target: {fileID: 4281705828555936710, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
       propertyPath: m_Name
-      value: EnemyOne
+      value: Enemy_WithSightLines
       objectReference: {fileID: 0}
     - target: {fileID: 4281705828555936711, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
       propertyPath: m_RootOrder
