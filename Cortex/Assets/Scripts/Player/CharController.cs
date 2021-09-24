@@ -91,6 +91,7 @@ public class CharController : MonoBehaviour
                     //Jump to target
                     health_jumps -= 1;
                     Jump(targetBody);
+                    targetBody.gameObject.GetComponent<EnemyController>().Disappear();
                 }
             }
         }
@@ -165,6 +166,7 @@ public class CharController : MonoBehaviour
 
         //Need to destroy the enemy body
         FOVScript.PlayerJumping();
-        Destroy(body);
+        //Destroy(body);
+        //body.transform.position.y = -100;
     }
 }

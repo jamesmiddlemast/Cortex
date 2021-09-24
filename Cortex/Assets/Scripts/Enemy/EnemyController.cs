@@ -146,4 +146,9 @@ public class EnemyController : MonoBehaviour
             enemyState = "Patrolling";
         }
     }
+
+    public void Disappear(){
+        Vector3 dis = new Vector3(0f,-100f,0f);
+        transform.position += dis;
+    }
 }
