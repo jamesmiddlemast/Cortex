@@ -33,6 +33,9 @@ public class CharController : MonoBehaviour
         [SerializeField]
         float max_integrity;
 
+    //Reference PlayerFieldOfView fovScript
+        public PlayerFieldOfView FOVScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +63,9 @@ public class CharController : MonoBehaviour
 
         //Reset Integrity
         integrity = 0.0f;
+
+        //FOV Script
+        FOVScript = this.gameObject.GetComponent<PlayerFieldOfView>();
     }
 
     // Update is called once per frame
@@ -80,7 +86,7 @@ public class CharController : MonoBehaviour
             //Check health/Jumps left
             if (health_jumps > 0){
                 // Identify Target, Check if a target is visible and jump to them
-                if (PlayerFieldOfView.canSeeTarget == true){
+                if (FOVScript.canSeeTarget == true){
                     targetBody = PlayerFieldOfView.targetBody;
                     //Jump to target
                     health_jumps -= 1;
@@ -158,6 +164,7 @@ public class CharController : MonoBehaviour
         //}
 
         //Need to destroy the enemy body
+        FOVScript.PlayerJumping();
         Destroy(body);
     }
 }

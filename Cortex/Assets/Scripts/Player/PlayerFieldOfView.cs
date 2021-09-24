@@ -16,7 +16,7 @@ public class PlayerFieldOfView : MonoBehaviour
     public LayerMask obstructionMask;
 
 
-    public static bool canSeeTarget;
+    public bool canSeeTarget;
 
     private void Start()
     {
@@ -69,5 +69,11 @@ public class PlayerFieldOfView : MonoBehaviour
             canSeeTarget = false;
             targetBody.GetComponent<EnemyController>().isGlowing = false;
         }
+    }
+
+    public void PlayerJumping(){
+        //playerRef = null;
+        targetBody = null;
+        canSeeTarget = false;
     }
 }
