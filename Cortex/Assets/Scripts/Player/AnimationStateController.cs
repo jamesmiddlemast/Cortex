@@ -17,6 +17,7 @@ public class AnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // all variables set to each key, "isWalking" is Boolean used by unity to see if animation transition conditions are true or false, this can be found in the animation contrller settings in unity
         bool isWalking = animator.GetBool("isWalking");
         bool wPressed = Input.GetKey("w");
         bool sPressed = Input.GetKey("s");
