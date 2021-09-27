@@ -14,7 +14,10 @@ public class CameraController : MonoBehaviour
 
     //Variables for determining when the player is hidden behind a wall
     //The current wall
-    private TransparentWall currentTransparentWall;
+    private List<TransparentWall> currentTransparentWalls = new List<TransparentWall>();
+
+    //Hitting multiple objects
+    RaycastHit[] hits;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,15 @@ public class CameraController : MonoBehaviour
     //For determining if a wall is between the camera and the player
     private void FixedUpdate()
     {
+        //Remove all transparencies at start of update, clear list of transparent walls, then redo transparencies.
+        //If there are transparent walls.
+        if (currentTransparentWalls.Count > 1){
+            for (int i = 0; i < currentTransparentWalls.Count; i++){
+                currentTransparentWalls[0].ChangeTransparency(false);
+                currentTransparentWalls.Remove(currentTransparentWalls[0]);
+            }
+        }
+
         //Calculate the Vector direction 
         Vector3 direction = playerObject.transform.position - transform.position;
         //Calculate the length
@@ -41,35 +53,24 @@ public class CameraController : MonoBehaviour
         //Draw the ray in the debug
         Debug.DrawRay(transform.position, direction * length, Color.red);
         //The first object hit reference
-        RaycastHit currentHit;
+        //RaycastHit currentHit;
 
         //Cast the ray and report the firt object hit filtering by "Wall" layer mask
-        if (Physics.Raycast(transform.position, direction, out currentHit, length, LayerMask.GetMask("ObstructionMask")))
+        hits = Physics.RaycastAll(transform.position, direction, length, LayerMask.GetMask("ObstructionMask"));
+        if (hits.Length > 0)
         {
-            //Getting the script to change transparency of the hit object
-            TransparentWall transparentWall = currentHit.transform.GetComponent<TransparentWall>();
-            //If the object is not null
-            if (transparentWall)
-            {
-                //If there is a previous wall hit and it's different from this one
-                if (currentTransparentWall && currentTransparentWall.gameObject != transparentWall.gameObject)
+            for (int i = 0; i<hits.Length; i++){
+
+                //Getting the script to change transparency of the hit object
+                TransparentWall transparentWall = hits[i].transform.GetComponent<TransparentWall>();
+                //If the object is not null
+                if (transparentWall)
                 {
-                    //Restore its transparency setting it not transparent
-                    currentTransparentWall.ChangeTransparency(false);
+                    //Change the object transparency in transparent.
+                    transparentWall.ChangeTransparency(true);
+                    currentTransparentWalls.Add(transparentWall);
                 }
-                //Change the object transparency in transparent.
-                transparentWall.ChangeTransparency(true);
-                currentTransparentWall = transparentWall;
-            }            
-        }
-        else
-        {
-            //If nothing is hit and there is a previous object hit
-            if (currentTransparentWall)
-            {
-                //Restore its transparency setting it not transparent
-                currentTransparentWall.ChangeTransparency(false);
-            }
+            }        
         }
     }
 }

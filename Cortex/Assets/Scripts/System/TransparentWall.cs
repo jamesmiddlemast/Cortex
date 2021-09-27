@@ -9,12 +9,17 @@ public class TransparentWall : MonoBehaviour
     Color materialColor;
     private bool transparent = false;
 
+    //Transparent and Opaque shaders
+    //Shader shader1;
+    //Shader shader2;
+
     private void Start()
     {
         //Get the renderer of the object
         rend = GetComponent<Renderer>();
         //Get the material color
         materialColor = rend.material.color;
+
     }
 
     public void ChangeTransparency(bool transparent)

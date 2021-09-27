@@ -73,26 +73,30 @@ public class CharController : MonoBehaviour
     {
         //Check for player input
         if (Input.anyKey){
-            Move();
-        }
-
-        //Check for Ctrl press (Crouch)
-        if (Input.GetKeyDown(KeyCode.LeftControl)){
-            Crouch();
-        }
-
-        //Check for Space press (BodyJump)
-        if (Input.GetKeyDown(KeyCode.Space)){
-            //Check health/Jumps left
-            if (health_jumps > 0){
-                // Identify Target, Check if a target is visible and jump to them
-                if (FOVScript.canSeeTarget == true){
-                    targetBody = PlayerFieldOfView.targetBody;
-                    //Jump to target
-                    health_jumps -= 1;
-                    Jump(targetBody);
-                    targetBody.gameObject.GetComponent<EnemyController>().Disappear();
+            //Check for P press
+            if (Input.GetKeyDown(KeyCode.P)){
+                Pause();
+            }
+            //Check for Ctrl press (Crouch)
+            else if (Input.GetKeyDown(KeyCode.LeftControl)){
+                Crouch();
+            }
+            //Check for Space press (BodyJump)
+            else if (Input.GetKeyDown(KeyCode.Space)){
+                //Check health/Jumps left
+                if (health_jumps > 0){
+                    // Identify Target, Check if a target is visible and jump to them
+                    if (FOVScript.canSeeTarget == true){
+                        targetBody = PlayerFieldOfView.targetBody;
+                        //Jump to target
+                        health_jumps -= 1;
+                        Jump(targetBody);
+                        targetBody.gameObject.GetComponent<EnemyController>().Disappear();
+                    }
                 }
+            }
+            else if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))){
+                Move();
             }
         }
 
@@ -139,6 +143,11 @@ public class CharController : MonoBehaviour
         //Move to the new body
         currentBody.transform.position = body.transform.position;
 
+        //Move to the floor
+        Vector3 dis = currentBody.transform.position;
+        dis.y = 0;
+        currentBody.transform.position = dis;
+
         //No longer Destroy the current body
         //Destroy(this.currentBody);
 
@@ -168,5 +177,9 @@ public class CharController : MonoBehaviour
         FOVScript.PlayerJumping();
         //Destroy(body);
         //body.transform.position.y = -100;
+    }
+
+    void Pause(){
+        UIController.game_paused = !UIController.game_paused;
     }
 }

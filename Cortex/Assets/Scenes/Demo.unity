@@ -791,6 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_jumps: {fileID: 522081528}
   integrity: {fileID: 1984045263}
+  visable_pause: 0
 --- !u!1 &487446359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9970,7 +9971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2532696045207487044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.054214, y: -0.0000019073486, z: 6.8518715}
+  m_LocalPosition: {x: 12.6, y: -0.0000019073486, z: 128.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1223745405}

@@ -20,7 +20,7 @@ public class EndPlate : MonoBehaviour
     //Trigger Victory on collision with Player
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "DetectiveBody"){
+        if(other.tag == "Player"){
             SceneManager.LoadScene("VictoryMenu");
         }
     }

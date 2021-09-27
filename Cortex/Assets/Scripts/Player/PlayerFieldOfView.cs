@@ -39,6 +39,11 @@ public class PlayerFieldOfView : MonoBehaviour
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
+        //Reset canSeeTarget
+        if (canSeeTarget){
+            canSeeTarget = false;
+            targetBody.GetComponent<EnemyController>().isGlowing = false;
+        }
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
@@ -56,18 +61,21 @@ public class PlayerFieldOfView : MonoBehaviour
                     playerRef = targetBody;
                 }
                 else{
-                    canSeeTarget = false;
-                    targetBody.GetComponent<EnemyController>().isGlowing = false;
+                    //canSeeTarget = false;
+                    //targetBody.GetComponent<EnemyController>().isGlowing = false;
+                    //break;
                 }
             }
             else{
-                canSeeTarget = false;
-                targetBody.GetComponent<EnemyController>().isGlowing = false;
+                //canSeeTarget = false;
+                //targetBody.GetComponent<EnemyController>().isGlowing = false;
+                //break;
             }
         }
         else if (canSeeTarget){
-            canSeeTarget = false;
-            targetBody.GetComponent<EnemyController>().isGlowing = false;
+            //canSeeTarget = false;
+            //targetBody.GetComponent<EnemyController>().isGlowing = false;
+            //break;
         }
     }
 

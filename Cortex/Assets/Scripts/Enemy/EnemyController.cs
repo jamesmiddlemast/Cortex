@@ -150,5 +150,6 @@ public class EnemyController : MonoBehaviour
     public void Disappear(){
         Vector3 dis = new Vector3(0f,-100f,0f);
         transform.position += dis;
+        enemyState = "Finished";
     }
 }
