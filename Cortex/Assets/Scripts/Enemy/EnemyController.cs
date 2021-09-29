@@ -56,30 +56,33 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        switch (enemyState){
-            case "Patrolling" :
-                Patrol();
-                break;
-            case "Guarding":
-                Guard();
-                break;
-            case "Rotating":
-                Rotate();
-                break;
-            case "Facing":
-                Face();
-                break;
-            case "Finished":
-                break;
-        }
+    void Update(){
+    //Only update if game not paused
 
-        //Glow when seen (This can be optimised, change the bool to a function the player calls instead)
-        if (isGlowing){
-            this.gameObject.GetComponent<MeshRenderer>().material = glowingMaterial;
-        } else {
-            this.gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
+        if (!UIController.game_paused){
+            switch (enemyState){
+                case "Patrolling" :
+                    Patrol();
+                    break;
+                case "Guarding":
+                    Guard();
+                    break;
+                case "Rotating":
+                    Rotate();
+                    break;
+                case "Facing":
+                    Face();
+                    break;
+                case "Finished":
+                    break;
+            }
+
+            //Glow when seen (This can be optimised, change the bool to a function the player calls instead)
+            if (isGlowing){
+                this.gameObject.GetComponent<MeshRenderer>().material = glowingMaterial;
+            } else {
+                this.gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
+            }
         }
     }
 

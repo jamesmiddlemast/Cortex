@@ -30,9 +30,6 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("isWalking", true);
         }
 
-
-
-
         // if player is not pressing w
         if (isWalking && !wPressed & !sPressed & !aPressed & !dPressed)
         {
@@ -40,6 +37,13 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("isWalking", false);
 
 
+        }
+
+        // If game is paused, set disable walking animation
+        if (UIController.game_paused)
+        {
+            // set the isWalking boolean to be false
+            animator.SetBool("isWalking", false);
         }
     }
 }

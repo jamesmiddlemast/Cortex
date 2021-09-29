@@ -36,6 +36,7 @@ public class CharController : MonoBehaviour
     //Reference PlayerFieldOfView fovScript
         public PlayerFieldOfView FOVScript;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,38 +72,43 @@ public class CharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Check for player input
-        if (Input.anyKey){
-            //Check for P press
-            if (Input.GetKeyDown(KeyCode.P)){
-                Pause();
-            }
-            //Check for Ctrl press (Crouch)
-            else if (Input.GetKeyDown(KeyCode.LeftControl)){
-                Crouch();
-            }
-            //Check for Space press (BodyJump)
-            else if (Input.GetKeyDown(KeyCode.Space)){
-                //Check health/Jumps left
-                if (health_jumps > 0){
-                    // Identify Target, Check if a target is visible and jump to them
-                    if (FOVScript.canSeeTarget == true){
-                        targetBody = PlayerFieldOfView.targetBody;
-                        //Jump to target
-                        health_jumps -= 1;
-                        Jump(targetBody);
-                        targetBody.gameObject.GetComponent<EnemyController>().Disappear();
-                    }
-                }
-            }
-            else if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))){
-                Move();
-            }
+        //Check Pause/Unpause
+        if (Input.GetKeyDown(KeyCode.P)){
+            Pause();
         }
 
-        //Check Whether Integrity has been breached
-        if (integrity > max_integrity){
-            SceneManager.LoadScene("EndMenu");
+        //Only get player input and update if game is not paused
+
+        if (!UIController.game_paused){
+            //Check for player input
+            if (Input.anyKey){
+                //Check for Ctrl press (Crouch)
+                if (Input.GetKeyDown(KeyCode.LeftControl)){
+                    Crouch();
+                }
+                //Check for Space press (BodyJump)
+                else if (Input.GetKeyDown(KeyCode.Space)){
+                    //Check health/Jumps left
+                    if (health_jumps > 0){
+                        // Identify Target, Check if a target is visible and jump to them
+                        if (FOVScript.canSeeTarget == true){
+                            targetBody = PlayerFieldOfView.targetBody;
+                            //Jump to target
+                            health_jumps -= 1;
+                            Jump(targetBody);
+                            targetBody.gameObject.GetComponent<EnemyController>().Disappear();
+                        }
+                    }
+                }
+                else if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))){
+                    Move();
+                }
+            }
+
+            //Check Whether Integrity has been breached
+            if (integrity > max_integrity){
+                SceneManager.LoadScene("EndMenu");
+            }
         }
     }
 
