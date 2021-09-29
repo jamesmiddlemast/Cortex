@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndMenu : MonoBehaviour
 {
     public void RetryButton(){
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("Demo 1");
     }
 
     public void ExitButton(){
