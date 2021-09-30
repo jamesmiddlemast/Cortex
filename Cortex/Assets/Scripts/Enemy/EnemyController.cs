@@ -22,6 +22,9 @@ public class EnemyController : MonoBehaviour
     //Materials for when Glowing
     public Material defaultMaterial;
     public Material glowingMaterial;
+
+    //Reference to the Enemy's body.
+    public GameObject EnemyBody;
     
 
     [SerializeField]
@@ -79,9 +82,9 @@ public class EnemyController : MonoBehaviour
 
             //Glow when seen (This can be optimised, change the bool to a function the player calls instead)
             if (isGlowing){
-                this.gameObject.GetComponent<MeshRenderer>().material = glowingMaterial;
+                EnemyBody.GetComponent<MeshRenderer>().material = glowingMaterial;
             } else {
-                this.gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
+                EnemyBody.gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
             }
         }
     }
