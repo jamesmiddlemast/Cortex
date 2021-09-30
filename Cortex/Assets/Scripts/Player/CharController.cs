@@ -60,10 +60,13 @@ public class CharController : MonoBehaviour
         currentBody.tag = "PlayerBody";
 
         //Setup Enemy's Field of view to original value
-        FieldOfView.radius = 7f;
+        //FieldOfView.radius = 7f;
 
         //Reset Integrity
         integrity = 0.0f;
+
+        //Reset Jumps;
+        health_jumps = 3;
 
         //FOV Script
         FOVScript = this.gameObject.GetComponent<PlayerFieldOfView>();
@@ -135,13 +138,13 @@ public class CharController : MonoBehaviour
             isCrouched = false;
             moveSpeed = walkSpeed;
             //Also set enemie's view radius back to normal.
-            FieldOfView.radius = 7f;
+            //FieldOfView.radius = 7f;
         } else {
             //If not, crouch.
             isCrouched = true;
             moveSpeed = crouchSpeed;
             //Shrink Enemy's view radius.
-            FieldOfView.radius = 4f;
+            //FieldOfView.radius = 4f;
         }
     }
 
@@ -150,9 +153,9 @@ public class CharController : MonoBehaviour
         currentBody.transform.position = body.transform.position;
 
         //Move to the floor
-        Vector3 dis = currentBody.transform.position;
-        dis.y = 0;
-        currentBody.transform.position = dis;
+        //Vector3 dis = currentBody.transform.position;
+        //dis.y = 0;
+        //currentBody.transform.position = dis;
 
         //No longer Destroy the current body
         //Destroy(this.currentBody);

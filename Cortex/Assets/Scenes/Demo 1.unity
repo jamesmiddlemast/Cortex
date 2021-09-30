@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: waypoints.Array.size
@@ -1518,7 +1518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1579,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: angle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
@@ -2112,6 +2116,10 @@ PrefabInstance:
       propertyPath: angle
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
       value: 4
@@ -2155,8 +2163,8 @@ Transform:
   - {fileID: 669050069}
   - {fileID: 1345771911}
   - {fileID: 1794363743}
-  - {fileID: 736508011}
   - {fileID: 1432794005}
+  - {fileID: 736508011}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7387,7 +7395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7452,6 +7460,10 @@ PrefabInstance:
     - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: angle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
@@ -7573,7 +7585,8 @@ GameObject:
   - component: {fileID: 1376965102}
   - component: {fileID: 1376965101}
   - component: {fileID: 1376965100}
-  m_Layer: 7
+  - component: {fileID: 1376965103}
+  m_Layer: 0
   m_Name: Door.001 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7654,6 +7667,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376965098}
+  m_Mesh: {fileID: 3459603051315571903, guid: bda05ccca875d2343a01df1970f5ce92, type: 3}
+--- !u!64 &1376965103
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376965098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 3459603051315571903, guid: bda05ccca875d2343a01df1970f5ce92, type: 3}
 --- !u!1 &1424752133 stripped
 GameObject:
@@ -7787,7 +7814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7848,6 +7875,10 @@ PrefabInstance:
     - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: angle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
@@ -7974,7 +8005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8039,6 +8070,10 @@ PrefabInstance:
     - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: angle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
@@ -8161,7 +8196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8226,6 +8261,10 @@ PrefabInstance:
     - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: angle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
@@ -9538,6 +9577,10 @@ PrefabInstance:
     - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: angle
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: walkSpeed
