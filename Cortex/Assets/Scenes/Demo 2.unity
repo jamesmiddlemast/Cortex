@@ -2922,7 +2922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 7.2000256, y: 3.399968}
+  m_AnchoredPosition: {x: 7.200012, y: 3.3999634}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1984045265
@@ -3162,6 +3162,7 @@ GameObject:
   - component: {fileID: 2104086250}
   - component: {fileID: 2104086255}
   - component: {fileID: 2104086256}
+  - component: {fileID: 2104086257}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -3184,6 +3185,10 @@ MonoBehaviour:
   walkSpeed: 5
   max_integrity: 0.018
   FOVScript: {fileID: 2104086250}
+  footstepDelay: 0.48
+  playerVolume: 1
+  footstep: {fileID: 8300000, guid: b7bb1e6920d13cd49bcf6bcdadaf7282, type: 3}
+  jumpsound: {fileID: 8300000, guid: 9002411ad0982da41809712f431febc7, type: 3}
 --- !u!114 &2104086250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3315,6 +3320,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3ae7cacc5a37840b9fb0f6624763be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2104086257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104086248}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9821436abea3bb140bc37b5aab183e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstep: {fileID: 8300000, guid: b7bb1e6920d13cd49bcf6bcdadaf7282, type: 3}
 --- !u!1 &2130678681
 GameObject:
   m_ObjectHideFlags: 0

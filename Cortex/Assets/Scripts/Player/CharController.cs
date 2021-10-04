@@ -36,6 +36,20 @@ public class CharController : MonoBehaviour
     //Reference PlayerFieldOfView fovScript
         public PlayerFieldOfView FOVScript;
 
+    //For Footsteps
+        public float footstepDelay;
+        float currentFootstepDelay;
+        GameObject soundGameObject;
+        AudioSource audioSource;
+        public float playerVolume;
+        public AudioClip footstep;
+    //Jump Sound
+        public AudioClip jumpsound;
+
+    //AmbientMusic
+        AudioSource musicAudioSource;
+        public float musicVolume;
+        public AudioClip ambientMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +84,17 @@ public class CharController : MonoBehaviour
 
         //FOV Script
         FOVScript = this.gameObject.GetComponent<PlayerFieldOfView>();
+
+        //Footsteps
+        currentFootstepDelay = footstepDelay;
+        soundGameObject = new GameObject("Sound");
+        audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.volume = playerVolume;
+
+        //Play ambient music
+        musicAudioSource = soundGameObject.AddComponent<AudioSource>();
+        musicAudioSource.volume = musicVolume;
+        musicAudioSource.PlayOneShot(ambientMusic);
     }
 
     // Update is called once per frame
@@ -105,7 +130,10 @@ public class CharController : MonoBehaviour
                 }
                 else if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))){
                     Move();
-                }
+                    PlayFootstepSound();
+                } 
+            } else if (currentFootstepDelay != footstepDelay){ //If no input, check whether footsteps just finished
+                ResetFootstepCountdown();
             }
 
             //Check Whether Integrity has been breached
@@ -149,24 +177,13 @@ public class CharController : MonoBehaviour
     }
 
     void Jump(GameObject body){
+
+        //Play jump sound
+        audioSource.PlayOneShot(jumpsound);
+
         //Move to the new body
         currentBody.transform.position = body.transform.position;
 
-        //Move to the floor
-        //Vector3 dis = currentBody.transform.position;
-        //dis.y = 0;
-        //currentBody.transform.position = dis;
-
-        //No longer Destroy the current body
-        //Destroy(this.currentBody);
-
-        //No longer replace the bodySet the new body as the current body
-        //currentBody = body;
-        //Set the new body's Mask as the Player's Mask (for enemy targeting)
-        //body.layer = 8;
-
-        //Set the new body's Tag as the Player
-        //body.tag = "PlayerBody";
 
         //Reset Crouch
         if (isCrouched){
@@ -176,19 +193,32 @@ public class CharController : MonoBehaviour
         //Need to set the player's rotation aligned with the new body's rotation.
         currentBody.transform.rotation = body.transform.rotation;
 
-        //Need to disable the new body's fieldofview script.
-        //FieldOfView fovScript = body.GetComponent<FieldOfView>();
-        //if (fovScript != null){
-        //    Destroy(fovScript);
-        //}
-
         //Need to destroy the enemy body
         FOVScript.PlayerJumping();
-        //Destroy(body);
-        //body.transform.position.y = -100;
+
     }
 
     void Pause(){
         UIController.game_paused = !UIController.game_paused;
+    }
+
+    //Plays footsteps on defined interval
+    void PlayFootstepSound(){
+        //Decrement cooldown
+        currentFootstepDelay = currentFootstepDelay - Time.deltaTime;
+        //If cooldown <= 0
+        if (currentFootstepDelay <= 0){
+            //Reset cooldown and play sound
+            currentFootstepDelay = footstepDelay;
+            audioSource.PlayOneShot(footstep);
+        }
+    }
+
+    //Resets footstep cooldown
+    void ResetFootstepCountdown(){
+        //Reset footstepdelay
+        currentFootstepDelay = footstepDelay;
+        //Take a final step
+        audioSource.PlayOneShot(footstep);
     }
 }
