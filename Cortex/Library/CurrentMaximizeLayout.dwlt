@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 27940
+  controlID: 14443
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 27941
+  controlID: 14444
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 27942
+  controlID: 14445
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,10 +217,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 32}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 62bfffff1ec2ffff6cc9ffff88d2ffffc0ddffff58e0ffffd8e0ffffc4efffffe2efffff78f0ffff7ef0ffff82f0ffff8ef0ffff20f6ffffa84e0000227c00003aa2000070a20000e2a3000032a400004aa4000050a40000
+      m_ExpandedIDs: 0678ffff2479ffffca7effffa8a3ffff5ea8ffff44d4ffff60ddffff7cddfffff4e0ffff2ae4ffff50e7ffffc6eafffffcedffff50f2ffffd6f5ffff56fbffff2c3a00007e3a0000da3f000038510000da520000be8b0000048c0000448e0000628e00005e8f00009ccf000040d20000fad200004ad30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 37.120953, y: -3.1962256, z: 15.347777}
+    m_Target: {x: -0.1039012, y: 1.0687467, z: 1.8065695}
     speed: 2
-    m_Value: {x: 37.120953, y: -3.1962256, z: 15.347777}
+    m_Value: {x: -0.1039012, y: 1.0687467, z: 1.8065695}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -357,13 +357,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.18392812, y: 0.6606764, z: -0.16975184, w: 0.7081349}
+    m_Target: {x: 0.2944467, y: -0.56746477, z: 0.22866215, w: 0.7346049}
     speed: 2
-    m_Value: {x: 0.18387356, y: 0.66048044, z: -0.16970149, w: 0.70792484}
+    m_Value: {x: 0.29435164, y: -0.56728154, z: 0.22858833, w: 0.7343677}
   m_Size:
-    m_Target: 10.487505
+    m_Target: 4.547918
     speed: 2
-    m_Value: 10.487505
+    m_Value: 4.547918
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -531,22 +531,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Assets/Materials
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Assets/Materials
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Dennys\Documents\GitHub\Cortex\Cortex
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: 7a420000
-    m_LastClickedID: 17018
-    m_ExpandedIDs: 000000006e42000070420000724200008042000010c1000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 723f0000
+    m_LastClickedID: 16242
+    m_ExpandedIDs: 00000000503f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -574,7 +574,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006e420000704200007242000010c1000000ca9a3b
+    m_ExpandedIDs: 0000000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -599,10 +599,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b825ffff
-    m_LastClickedInstanceID: -55880
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300005c3d0000da3c0000660f0000000000002e3c0000a03c00001c400000
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300005c3d0000da3c0000660f00002e3c0000a03c00001c40000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -713,8 +713,8 @@ MonoBehaviour:
     m_CachedPref: 162
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -55880
-  m_LastVerticalScrollValue: 730
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -750,7 +750,7 @@ MonoBehaviour:
     m_CachedPref: 162
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -55880
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
