@@ -22,6 +22,9 @@ public class UIController : MonoBehaviour
     //For Debug
     public bool visable_pause;
 
+    //For Objectives
+    bool all_clues_found = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class UIController : MonoBehaviour
         clues_found_text = clues_found.GetComponent<Text>();
         game_paused = false;
         current_clues_found = 0;
+        all_clues_found = false;
     }
 
     // Update is called once per frame
@@ -38,12 +42,20 @@ public class UIController : MonoBehaviour
     {
         health_jumps_text.text = "Health/Jumps: " + CharController.health_jumps;
         integrity_text.text = "Integrity: " + CharController.integrity;
-        clues_found_text.text = "Clues Found: " + current_clues_found + " of " + total_clues;
+        if (all_clues_found){
+            clues_found_text.text = "Find the Exit";
+        } else{
+            clues_found_text.text = "Clues Found: " + current_clues_found + " of " + total_clues;
+        }
 
         visable_pause = game_paused;
     }
 
     public void ClueFound(){
         current_clues_found ++;
+        //Change Objective if all Clues found
+        if (current_clues_found == total_clues){
+            all_clues_found = true;
+        }
     }
 }

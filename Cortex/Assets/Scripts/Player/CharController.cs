@@ -181,6 +181,9 @@ public class CharController : MonoBehaviour
         //Play jump sound
         audioSource.PlayOneShot(jumpsound);
 
+        //Create AfterImage at current location
+        AfterImage(body);
+
         //Move to the new body
         currentBody.transform.position = body.transform.position;
 
@@ -196,6 +199,26 @@ public class CharController : MonoBehaviour
         //Need to destroy the enemy body
         FOVScript.PlayerJumping();
 
+    }
+
+    void AfterImage(GameObject body){
+        //Identify the AfterImage
+        GameObject afterimage_source = GameObject.FindGameObjectWithTag("AfterImage_Effect_Source");
+        GameObject afterimage_destination = GameObject.FindGameObjectWithTag("AfterImage_Effect_Destination");
+
+        //Clone the afterimage at the source and destination
+        Vector3 source_pos = currentBody.transform.position;
+        Quaternion source_rotation = Quaternion.Euler(-90, 0, 0);
+        Vector3 destination_pos = body.transform.position;
+        Quaternion destination_rotation = Quaternion.Euler(-90, 0, 0);
+
+        //Create the particle effect
+        GameObject afterimage_new_source = Instantiate(afterimage_source, source_pos, source_rotation);
+        GameObject afterimage_new_destination = Instantiate(afterimage_destination, destination_pos, destination_rotation);
+
+
+        //afterimage_new_source.SetParent(null);
+        //afterimage_new_destination.SetParent(null);
     }
 
     void Pause(){
