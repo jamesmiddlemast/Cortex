@@ -138,6 +138,10 @@ public class CharController : MonoBehaviour
 
             //Check Whether Integrity has been breached
             if (integrity > max_integrity){
+                //Save current scene
+                Scene scene = SceneManager.GetActiveScene();
+                PlayerPrefs.SetString("CurrentLevel",scene.name);
+                
                 SceneManager.LoadScene("EndMenu");
             }
         }
