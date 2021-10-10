@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
     public bool visable_pause;
 
     //For Objectives
-    bool all_clues_found = false;
+    public static bool all_clues_found = false;
 
     // Start is called before the first frame update
     void Start()

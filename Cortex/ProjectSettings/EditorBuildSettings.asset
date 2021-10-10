@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/VictoryMenu.unity
     guid: 737168e87518c954eb707a1f0e3f72e6
+  - enabled: 1
+    path: Assets/Scenes/Menus/CluesMissingScene.unity
+    guid: 1e9cf9f13f70b0740918b72e1b608ba2
   m_configObjects: {}

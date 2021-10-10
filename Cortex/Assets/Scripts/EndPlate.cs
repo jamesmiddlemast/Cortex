@@ -22,7 +22,16 @@ public class EndPlate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player"){
-            SceneManager.LoadScene(NextLevel);
+            //Check if all clues are found
+            if (UIController.all_clues_found == true){
+                SceneManager.LoadScene(NextLevel);
+            } else {
+                //If not, request player finds clues
+                Scene scene = SceneManager.GetActiveScene();
+                PlayerPrefs.SetString("CurrentLevel",scene.name);
+                SceneManager.LoadScene("CluesMissingScene");
+
+            }
         }
     }
 }
