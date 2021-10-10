@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndPlate : MonoBehaviour
 {
+    public string NextLevel;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class EndPlate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player"){
-            SceneManager.LoadScene("VictoryMenu");
+            SceneManager.LoadScene(NextLevel);
         }
     }
 }
