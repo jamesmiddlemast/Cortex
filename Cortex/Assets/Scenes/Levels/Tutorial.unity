@@ -280,7 +280,7 @@ MonoBehaviour:
 
 
     Collect the clue
-    (Blue Orb) then proiceed to the end of the level without being caught'
+    (Blue Orb) then proceed to the end of the level without being caught'
 --- !u!222 &17459776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1303,7 +1303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1efda699ea606343bd0622b6876beb7, type: 2}
+  - {fileID: 2100000, guid: 587aab6eaf9f5a644bafae87cdeae790, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2028,7 +2028,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 48b807e3041593b45bf30214146ae8d8, type: 2}
+  - {fileID: 2100000, guid: 29abd03208086a94e959456c547c8953, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2118,7 +2118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 17, y: 37.799988}
+  m_AnchoredPosition: {x: 17, y: 37.799927}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &876294542
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2689,6 +2689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3af628057159c44ab888c349bcc884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CluePickup: {fileID: 8300000, guid: 9002411ad0982da41809712f431febc7, type: 3}
   UIController: {fileID: 455808573}
 --- !u!54 &1255243715
 Rigidbody:
@@ -12688,7 +12689,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29abd03208086a94e959456c547c8953, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12801,7 +12802,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 48b807e3041593b45bf30214146ae8d8, type: 2}
+  - {fileID: 2100000, guid: 29abd03208086a94e959456c547c8953, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13140,7 +13141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 48b807e3041593b45bf30214146ae8d8, type: 2}
+  - {fileID: 2100000, guid: 29abd03208086a94e959456c547c8953, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14011,7 +14012,7 @@ MonoBehaviour:
   playerVolume: 1
   footstep: {fileID: 8300000, guid: b7bb1e6920d13cd49bcf6bcdadaf7282, type: 3}
   jumpsound: {fileID: 8300000, guid: e0020835751d1d947b2dd1bc494719d5, type: 3}
-  musicVolume: 1
+  musicVolume: 0.5
   ambientMusic: {fileID: 8300000, guid: ae3548b928e318349a74bb24cc8b37d9, type: 3}
 --- !u!114 &2104086250
 MonoBehaviour:
