@@ -16,14 +16,21 @@ public class CameraController : MonoBehaviour
     //The current wall
     private List<TransparentWall> currentTransparentWalls = new List<TransparentWall>();
 
+    [SerializeField]
+    GameObject[] enemyList;
+
     //Hitting multiple objects
     RaycastHit[] hits;
+
+    [SerializeField]
+    public GameObject cameraobject;
 
     // Start is called before the first frame update
     void Start()
     {
         //Identify the player
         playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
+        enemyList = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -46,6 +53,36 @@ public class CameraController : MonoBehaviour
             }
         }
 
+        //Change this to affect all enemies as well.
+        for (int i = 0; i < enemyList.Length; i++){
+            //Calculate the Vector direction 
+            Vector3 edirection = enemyList[i].transform.position - cameraobject.transform.position;
+            //Calculate the length
+            float elength = Vector3.Distance(enemyList[i].transform.position, cameraobject.transform.position);
+            //Draw the ray in the debug
+            Debug.DrawRay(cameraobject.transform.position, edirection * elength, Color.red);
+            //The first object hit reference
+            //RaycastHit currentHit;
+
+            //Cast the ray and report the firt object hit filtering by "Wall" layer mask
+            hits = Physics.RaycastAll(cameraobject.transform.position, edirection, elength, LayerMask.GetMask("ObstructionMask"));
+            if (hits.Length > 0)
+            {
+                for (int j = 0; j<hits.Length; j++){
+
+                    //Getting the script to change transparency of the hit object
+                    TransparentWall transparentWall = hits[j].transform.GetComponent<TransparentWall>();
+                    //If the object is not null
+                    if (transparentWall)
+                    {
+                        //Change the object transparency in transparent.
+                        transparentWall.ChangeTransparency(true);
+                        currentTransparentWalls.Add(transparentWall);
+                    }
+                }        
+            }
+        }
+
         //Calculate the Vector direction 
         Vector3 direction = playerObject.transform.position - transform.position;
         //Calculate the length
@@ -59,10 +96,10 @@ public class CameraController : MonoBehaviour
         hits = Physics.RaycastAll(transform.position, direction, length, LayerMask.GetMask("ObstructionMask"));
         if (hits.Length > 0)
         {
-            for (int i = 0; i<hits.Length; i++){
+            for (int k = 0; k<hits.Length; k++){
 
                 //Getting the script to change transparency of the hit object
-                TransparentWall transparentWall = hits[i].transform.GetComponent<TransparentWall>();
+                TransparentWall transparentWall = hits[k].transform.GetComponent<TransparentWall>();
                 //If the object is not null
                 if (transparentWall)
                 {

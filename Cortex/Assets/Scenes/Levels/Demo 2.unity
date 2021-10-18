@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2e9dc3127d19cb64c98a0df0cae8b93e, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3571,6 +3571,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOffset: {x: -6, y: 5, z: -6}
   playerObject: {fileID: 0}
+  enemyList:
+  - {fileID: 0}
+  cameraobject: {fileID: 322908186}
 --- !u!1 &1252572770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3915203496545621095, guid: 3c6175c13657b1d419664852b38f98d6, type: 3}
@@ -14818,7 +14821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  max_integrity: 0.018
   FOVScript: {fileID: 2104086250}
   footstepDelay: 0.48
   playerVolume: 1

@@ -30,8 +30,7 @@ public class CharController : MonoBehaviour
         public static int health_jumps = 3;
     //Integrity of the Memory
         public static float integrity = 0.0f;
-        [SerializeField]
-        float max_integrity;
+        float max_integrity = 0.15f;
 
     //Reference PlayerFieldOfView fovScript
         public PlayerFieldOfView FOVScript;
