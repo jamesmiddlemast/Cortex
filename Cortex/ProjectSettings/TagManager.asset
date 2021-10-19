@@ -9,6 +9,7 @@ TagManager:
   - EndPlate
   - AfterImage_Effect_Source
   - AfterImage_Effect_Destination
+  - SettingsCanvas
   layers:
   - Default
   - TransparentFX

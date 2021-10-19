@@ -58,4 +58,8 @@ public class UIController : MonoBehaviour
             all_clues_found = true;
         }
     }
+    public static void SettingsMenu(bool displaySettings){
+        GameObject canvasObject = GameObject.FindGameObjectsWithTag("SettingsCanvas")[0];
+        canvasObject.GetComponent<Canvas>().enabled = displaySettings;
+    }
 }

@@ -94,6 +94,11 @@ public class CharController : MonoBehaviour
         musicAudioSource = soundGameObject.AddComponent<AudioSource>();
         musicAudioSource.volume = musicVolume;
         musicAudioSource.PlayOneShot(ambientMusic);
+
+        GameObject canvasObject = GameObject.FindGameObjectsWithTag("SettingsCanvas")[0];
+        canvasObject.GetComponent<SettingsScript>().SetVolumeLevels();
+
+
     }
 
     // Update is called once per frame
@@ -226,6 +231,7 @@ public class CharController : MonoBehaviour
 
     void Pause(){
         UIController.game_paused = !UIController.game_paused;
+        UIController.SettingsMenu(UIController.game_paused);
     }
 
     //Plays footsteps on defined interval
@@ -246,5 +252,13 @@ public class CharController : MonoBehaviour
         currentFootstepDelay = footstepDelay;
         //Take a final step
         audioSource.PlayOneShot(footstep);
+    }
+
+    public void setMusicVolume(float newvolume){
+        musicAudioSource.volume = newvolume;
+    }
+
+    public void setEffectsVolume(float newvolume){
+        audioSource.volume = newvolume;
     }
 }
