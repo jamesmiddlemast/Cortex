@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class PlayerFieldOfView : MonoBehaviour
 {
-    public float radius;
-    [Range(0,360)]
-    public float angle;
+    public float radius = 8f;
+    public float angle = 70f;
 
     public GameObject playerRef;
     public static GameObject targetBody;
@@ -26,7 +25,7 @@ public class PlayerFieldOfView : MonoBehaviour
 
     private IEnumerator FOVRoutine()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        WaitForSeconds wait = new WaitForSeconds(0.02f);
 
         while (true)
         {
@@ -44,38 +43,38 @@ public class PlayerFieldOfView : MonoBehaviour
             canSeeTarget = false;
             targetBody.GetComponent<EnemyController>().isGlowing = false;
         }
+
+        bool foundTarget = false;
+        GameObject foundTargetBody = null;
+        //If rangeChecks means multiple enemies within sphere
         if (rangeChecks.Length != 0)
         {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
+            //Check each enemy to see whether they are an acceptable target
+            for (int i = 0; i<rangeChecks.Length; i++){
+                Transform target = rangeChecks[i].transform;
+                Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
-            {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)){
-                    canSeeTarget = true;
-                    targetBody = target.gameObject;
-                    //Set Target's material to glowin.
-                    targetBody.GetComponent<EnemyController>().isGlowing = true;
-                    playerRef = targetBody;
+                if ((Vector3.Angle(transform.forward, directionToTarget) < angle / 2) || (-1 * Vector3.Angle(transform.forward, directionToTarget) > -1 * angle / 2))
+                {
+                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                    //If able to see
+                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask)){
+                        foundTarget = true;
+                        foundTargetBody = target.gameObject;
+                        //canSeeTarget = true;
+                        //targetBody = target.gameObject;
+                        //Set Target's material to glowin.
+                        //targetBody.GetComponent<EnemyController>().isGlowing = true;
+                        //playerRef = targetBody;
+                    }
                 }
-                else{
-                    //canSeeTarget = false;
-                    //targetBody.GetComponent<EnemyController>().isGlowing = false;
-                    //break;
-                }
-            }
-            else{
-                //canSeeTarget = false;
-                //targetBody.GetComponent<EnemyController>().isGlowing = false;
-                //break;
-            }
-        }
-        else if (canSeeTarget){
-            //canSeeTarget = false;
-            //targetBody.GetComponent<EnemyController>().isGlowing = false;
-            //break;
+            }   
+            if (foundTarget){
+                canSeeTarget = true;
+                targetBody = foundTargetBody;
+                targetBody.GetComponent<EnemyController>().isGlowing = true;
+                //playerRef = targetBody;
+            }        
         }
     }
 

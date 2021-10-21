@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d65f0bae5dad546a2ba8c40f327d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExitReasonText: {fileID: 1515869376}
 --- !u!114 &610550173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,7 +858,7 @@ GameObject:
   - component: {fileID: 1515869379}
   - component: {fileID: 1515869378}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ReasonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,7 +916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Caught!
+  m_Text: D
 --- !u!222 &1515869379
 CanvasRenderer:
   m_ObjectHideFlags: 0

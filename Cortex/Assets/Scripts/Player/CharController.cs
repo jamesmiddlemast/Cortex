@@ -44,6 +44,8 @@ public class CharController : MonoBehaviour
         public AudioClip footstep;
     //Jump Sound
         public AudioClip jumpsound;
+    //Error Jump
+        public AudioClip errorjumpsound;
 
     //AmbientMusic
         AudioSource musicAudioSource;
@@ -90,6 +92,7 @@ public class CharController : MonoBehaviour
         audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.volume = playerVolume;
 
+
         //Play ambient music
         musicAudioSource = soundGameObject.AddComponent<AudioSource>();
         musicAudioSource.volume = musicVolume;
@@ -129,7 +132,13 @@ public class CharController : MonoBehaviour
                             health_jumps -= 1;
                             Jump(targetBody);
                             targetBody.gameObject.GetComponent<EnemyController>().Disappear();
+                        } else {
+                            //Play Error noise.
+                            audioSource.PlayOneShot(errorjumpsound);
                         }
+                    } else {
+                        //Play Jump Error Noise.
+                        audioSource.PlayOneShot(errorjumpsound);
                     }
                 }
                 else if ((Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))){
@@ -142,13 +151,23 @@ public class CharController : MonoBehaviour
 
             //Check Whether Integrity has been breached
             if (integrity > max_integrity){
-                //Save current scene
-                Scene scene = SceneManager.GetActiveScene();
-                PlayerPrefs.SetString("CurrentLevel",scene.name);
-                
-                SceneManager.LoadScene("EndMenu");
+                ExitLevel("Caught");
+            }
+
+            //Check for R key
+            if (Input.GetKeyDown(KeyCode.R)){
+                ExitLevel("Reset");
             }
         }
+    }
+
+    void ExitLevel(string exitReason){
+        //Save current scene
+        Scene scene = SceneManager.GetActiveScene();
+        PlayerPrefs.SetString("CurrentLevel",scene.name);
+        PlayerPrefs.SetString("ExitReason",exitReason);
+        
+        SceneManager.LoadScene("EndMenu");
     }
 
     //Main Movement Function
@@ -206,6 +225,9 @@ public class CharController : MonoBehaviour
 
         //Need to destroy the enemy body
         FOVScript.PlayerJumping();
+
+        //Update Cigaret
+        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>().UpdateCig(health_jumps);//  UIController.UpdateCig(health_jumps);
 
     }
 

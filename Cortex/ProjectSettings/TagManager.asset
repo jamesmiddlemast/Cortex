@@ -10,6 +10,7 @@ TagManager:
   - AfterImage_Effect_Source
   - AfterImage_Effect_Destination
   - SettingsCanvas
+  - UIController
   layers:
   - Default
   - TransparentFX

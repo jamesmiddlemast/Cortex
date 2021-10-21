@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsScript : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class SettingsScript : MonoBehaviour
     public GameObject playerObject;
     public CharController playerObjectScript;
 
+    //Text Fields for Volume
+    public GameObject MasterVolumeText;
+    public GameObject EffectsVolumeText;
+    public GameObject MusicVolumeText;
+
     void Start()
     {
         //Get Volume from PlayerPrefs (or set both master and effects/music to 5 if no playerPrefs)
@@ -21,8 +27,13 @@ public class SettingsScript : MonoBehaviour
         musicVolume = PlayerPrefs.GetFloat("MusicVolume",5f);
 
         //Identify Player
-        playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
-        playerObjectScript = playerObject.GetComponent<CharController>();
+        //GameObject[] empty = new GameObject[];
+        if (GameObject.FindGameObjectsWithTag("Player").Length > 0){
+            playerObject = GameObject.FindGameObjectsWithTag("Player")[0];
+            playerObjectScript = playerObject.GetComponent<CharController>();
+        } else {
+            playerObject = null;
+        }
 
         //Set initial Volumes for all components
         SetVolumeLevels();
@@ -65,18 +76,26 @@ public class SettingsScript : MonoBehaviour
             totalMusicVolume = masterVolume + musicVolume;
             totalMusicVolume = totalMusicVolume/10;
         }
-        playerObjectScript.setMusicVolume(totalMusicVolume);
-
+        
         float totalEffectsVolume = 0;
         if ((masterVolume > 0) && (effectsVolume > 0)){
             totalEffectsVolume = masterVolume + effectsVolume;
             totalEffectsVolume = totalEffectsVolume/10;
         }
-        playerObjectScript.setEffectsVolume(totalEffectsVolume);
 
         PlayerPrefs.SetFloat("MasterVolume",masterVolume);
         PlayerPrefs.SetFloat("EffectsVolume",effectsVolume);
         PlayerPrefs.SetFloat("MusicVolume",musicVolume);
+
+        //Update Text
+        MasterVolumeText.GetComponent<Text>().text = "Master: "+ masterVolume;
+        MusicVolumeText.GetComponent<Text>().text = "Music: "+ musicVolume;
+        EffectsVolumeText.GetComponent<Text>().text = "Effects: "+ effectsVolume;
+
+        if (playerObject != null){
+            playerObjectScript.setMusicVolume(totalMusicVolume);
+            playerObjectScript.setEffectsVolume(totalEffectsVolume);
+        }
     }
 
     public void ChangeMasterVolume(int amount){

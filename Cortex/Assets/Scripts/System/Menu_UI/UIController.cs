@@ -25,6 +25,15 @@ public class UIController : MonoBehaviour
     //For Objectives
     public static bool all_clues_found = false;
 
+    //Cig image
+    public GameObject CigImage;
+    public Texture Cig_Full;
+    public Texture Cig_Mostly;
+    public Texture Cig_Slightly;
+    public Texture Cig_Empty;
+
+    public GameObject resetText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,17 +44,17 @@ public class UIController : MonoBehaviour
         game_paused = false;
         current_clues_found = 0;
         all_clues_found = false;
+        health_jumps_text.text = "";
+        integrity_text.text = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        health_jumps_text.text = "Health/Jumps: " + CharController.health_jumps;
-        integrity_text.text = "Integrity: " + CharController.integrity;
         if (all_clues_found){
             clues_found_text.text = "Find the Exit";
         } else{
-            clues_found_text.text = "Clues Found: " + current_clues_found + " of " + total_clues;
+            clues_found_text.text = "Find the Clues: " + current_clues_found + " of " + total_clues;
         }
 
         visable_pause = game_paused;
@@ -61,5 +70,20 @@ public class UIController : MonoBehaviour
     public static void SettingsMenu(bool displaySettings){
         GameObject canvasObject = GameObject.FindGameObjectsWithTag("SettingsCanvas")[0];
         canvasObject.GetComponent<Canvas>().enabled = displaySettings;
+    }
+
+    public void UpdateCig(int jumps_left){
+        RawImage CigImageImage = CigImage.GetComponent<RawImage>();
+        if (jumps_left == 3){
+            CigImageImage.texture = Cig_Full;
+        } else if (jumps_left == 2){
+            CigImageImage.texture = Cig_Mostly;
+        } else if (jumps_left == 1){
+            CigImageImage.texture = Cig_Slightly;
+        } else if (jumps_left == 0){
+            CigImageImage.texture = Cig_Empty;
+            //Displau [R]eset? Text
+            resetText.GetComponent<Text>().enabled = true;
+        }
     }
 }
