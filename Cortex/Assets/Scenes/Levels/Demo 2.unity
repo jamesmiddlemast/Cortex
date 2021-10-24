@@ -1006,6 +1006,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103286950}
   m_Mesh: {fileID: -8488365990969604591, guid: bda05ccca875d2343a01df1970f5ce92, type: 3}
+--- !u!1 &123437121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6266024678872738229, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 862829640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &126560033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4097834336297889281, guid: 3c6175c13657b1d419664852b38f98d6, type: 3}
@@ -3329,6 +3334,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6692290496178104961, guid: 0d96236569e6b734d97ed01a31d33392, type: 3}
+--- !u!1 &635295420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6266024678872738229, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 1732183507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &647422566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,7 +4335,7 @@ PrefabInstance:
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: EnemyBody
       value: 
-      objectReference: {fileID: 1772493258}
+      objectReference: {fileID: 123437121}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: isGlowing
       value: 0
@@ -17511,11 +17521,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
   m_PrefabInstance: {fileID: 361971687}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1568395941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
-  m_PrefabInstance: {fileID: 1732183507}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1578460119
 GameObject:
   m_ObjectHideFlags: 0
@@ -18316,7 +18321,7 @@ PrefabInstance:
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: EnemyBody
       value: 
-      objectReference: {fileID: 1568395941}
+      objectReference: {fileID: 635295420}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: isGlowing
       value: 0
@@ -18485,11 +18490,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2915904576110471227, guid: 3c6175c13657b1d419664852b38f98d6, type: 3}
---- !u!1 &1772493258 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
-  m_PrefabInstance: {fileID: 862829640}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1794363743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5108971544348982291, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
