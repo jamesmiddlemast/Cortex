@@ -220,6 +220,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CluePickup: {fileID: 8300000, guid: 9002411ad0982da41809712f431febc7, type: 3}
   UIController: {fileID: 891757020}
+--- !u!114 &15146170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15146167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.8950032, b: 0, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &15146172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1116,8 +1134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -244, y: 0}
-  m_SizeDelta: {x: 160, y: 188.3179}
+  m_AnchoredPosition: {x: -197, y: 0}
+  m_SizeDelta: {x: 160, y: 299.32}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &453756907
 MonoBehaviour:
@@ -1162,7 +1180,14 @@ MonoBehaviour:
 
 
     Enemies
-    cannot see through walls, but can see through windows'
+    cannot see through walls, but can see through windows
+
+
+    P to pause the game
+    and access the settings
+
+
+    R to resart level'
 --- !u!222 &453756908
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3406,7 +3431,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f5cfdfa1ba595d142b9bbb50d3f4c5b0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6d113f3d3ec468c49aeb22001c1ec1c2, type: 2}
+      objectReference: {fileID: 2100000, guid: e00d5f5fce7597d4e81cdaca22dd3b56, type: 2}
     - target: {fileID: 919132149155446097, guid: f5cfdfa1ba595d142b9bbb50d3f4c5b0, type: 3}
       propertyPath: m_Name
       value: Obj_Clue_Files
@@ -3485,6 +3510,7 @@ MonoBehaviour:
   Cig_Slightly: {fileID: 2800000, guid: 1c089c7e57ba9a945ad6b0f277a29d78, type: 3}
   Cig_Empty: {fileID: 2800000, guid: 91851a94c68a865478a976d8646ffaf1, type: 3}
   resetText: {fileID: 1072921807}
+  resetText2: {fileID: 0}
 --- !u!114 &891757023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4196,6 +4222,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5108971546024152968, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: radius
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5108971546024152969, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: waypoints.Array.size
       value: 2
@@ -4716,6 +4746,7 @@ GameObject:
   - component: {fileID: 1187665301}
   - component: {fileID: 1187665299}
   - component: {fileID: 1187665300}
+  - component: {fileID: 1187665303}
   m_Layer: 0
   m_Name: EndPlate
   m_TagString: EndPlate
@@ -4847,7 +4878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f79e13a8bb00ad4ea260f68a4e56e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: Demo 2
+  NextLevel: Level 1
 --- !u!222 &1187665301
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4865,16 +4896,34 @@ RectTransform:
   m_GameObject: {fileID: 1187665294}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 2.21}
-  m_LocalScale: {x: 2.93708, y: 0.367135, z: 2.93708}
+  m_LocalScale: {x: 1.45, y: 0.367135, z: 2.93708}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.45, y: -0.3}
+  m_AnchoredPosition: {x: 15.83, y: -0.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1187665303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187665294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0.8993242, b: 1, a: 1}
+  outlineWidth: 3
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1203236859
 GameObject:
   m_ObjectHideFlags: 0
