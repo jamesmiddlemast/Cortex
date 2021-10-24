@@ -34,7 +34,7 @@ public class TransparentWall : MonoBehaviour
         if (transparent)
         {
             //Change the alpha of the color
-            materialColor.a = 0.92f;
+            materialColor.a = 0.8f;
         }
         else
         {
