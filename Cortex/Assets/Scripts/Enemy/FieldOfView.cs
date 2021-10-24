@@ -17,11 +17,13 @@ public class FieldOfView : MonoBehaviour
     public bool canSeePlayer;
 
     float integrityDamage = 1.0f;
+    public Light flashlight;
 
     private void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
+        flashlight = gameObject.GetComponentInChildren<Light>();
     }
 
     private IEnumerator FOVRoutine()
@@ -38,7 +40,6 @@ public class FieldOfView : MonoBehaviour
     private void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
@@ -59,7 +60,23 @@ public class FieldOfView : MonoBehaviour
             else
                 canSeePlayer = false;
         }
-        else if (canSeePlayer)
+        else if (canSeePlayer){
             canSeePlayer = false;
+        }
+        UpdateSpotlight(canSeePlayer);
+    }
+
+    private void UpdateSpotlight(bool seePlayer){
+        if (seePlayer){
+            //Change Spotlight to Red
+            flashlight.color = new Color32(241, 69, 31, 255);
+            return;
+            //F1461F
+        } else {
+            //Change Spotlight to Yellow
+            flashlight.color = new Color32(243, 235, 93, 255);
+            return;
+            //F3EB5D
+        }
     }
 }
