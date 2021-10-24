@@ -33,6 +33,7 @@ public class UIController : MonoBehaviour
     public Texture Cig_Empty;
 
     public GameObject resetText;
+    public GameObject resetText2;
 
     // Start is called before the first frame update
     void Start()
@@ -84,6 +85,7 @@ public class UIController : MonoBehaviour
             CigImageImage.texture = Cig_Empty;
             //Displau [R]eset? Text
             resetText.GetComponent<Text>().enabled = true;
+            resetText2.GetComponent<Text>().enabled = true;
         }
     }
 }

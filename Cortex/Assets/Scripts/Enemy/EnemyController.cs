@@ -82,9 +82,9 @@ public class EnemyController : MonoBehaviour
 
             //Glow when seen (This can be optimised, change the bool to a function the player calls instead)
             if (isGlowing){
-                EnemyBody.GetComponent<MeshRenderer>().material = glowingMaterial;
+                EnemyBody.GetComponent<SkinnedMeshRenderer>().material = glowingMaterial;
             } else {
-                EnemyBody.gameObject.GetComponent<MeshRenderer>().material = defaultMaterial;
+                EnemyBody.gameObject.GetComponent<SkinnedMeshRenderer>().material = defaultMaterial;
             }
         }
     }
