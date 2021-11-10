@@ -58,6 +58,14 @@ public class EnemyController : MonoBehaviour
         isGlowing = false;
     }
 
+    public bool isWalking(){
+        if (enemyState == "Patrolling"){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // Update is called once per frame
     void Update(){
     //Only update if game not paused

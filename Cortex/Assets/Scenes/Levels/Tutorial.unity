@@ -3043,6 +3043,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0023999999, y: 0.0060771448, z: 0.023999993}
   m_Center: {x: 0.0011999981, y: 0.0030385724, z: 0.011999996}
+--- !u!1 &804218061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 1809027374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &830184082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4134,6 +4139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 1653294839}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (2)
@@ -16465,6 +16474,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611671047}
   m_CullTransparentMesh: 1
+--- !u!1 &1653294839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 1094163789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675251217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2214688380492631718, guid: ce2795a7342b49549b828b148e55c6d3, type: 3}
@@ -17311,6 +17325,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 804218061}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (3)

@@ -395,6 +395,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 157987952}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (4)
@@ -493,6 +497,11 @@ PrefabInstance:
       objectReference: {fileID: 875837927}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+--- !u!1 &81752822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 327758159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &82444450 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5751479518907358670, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
@@ -847,6 +856,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103286950}
   m_Mesh: {fileID: -8488365990969604591, guid: bda05ccca875d2343a01df1970f5ce92, type: 3}
+--- !u!1 &121739091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 786834606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &126560033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4097834336297889281, guid: 3c6175c13657b1d419664852b38f98d6, type: 3}
@@ -951,6 +965,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d96236569e6b734d97ed01a31d33392, type: 3}
+--- !u!1 &157987952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 74244991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &162839108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1823,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 81752822}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (2)
@@ -1983,6 +2006,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 1250126184}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (5)
@@ -3949,6 +3976,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 121739091}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (3)
@@ -4323,6 +4354,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 2000681457}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines
@@ -4678,6 +4713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86301a4251fb3164fa4a8aa71dcdacf3, type: 3}
+--- !u!1 &948939942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 1732183507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &976091548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6172078024219421888, guid: 3c6175c13657b1d419664852b38f98d6, type: 3}
@@ -6429,6 +6469,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241774756}
   m_CullTransparentMesh: 1
+--- !u!1 &1250126184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 361971687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252572770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3915203496545621095, guid: 3c6175c13657b1d419664852b38f98d6, type: 3}
@@ -17226,6 +17271,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 2077320884}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (6)
@@ -18205,6 +18254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3248425326871523608, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+      propertyPath: EnemyController
+      value: 
+      objectReference: {fileID: 948939942}
     - target: {fileID: 5108971544348982290, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines (1)
@@ -19963,6 +20016,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &2000681457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 862829640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2005881247
 GameObject:
   m_ObjectHideFlags: 0
@@ -20309,6 +20367,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073269123}
   m_CullTransparentMesh: 1
+--- !u!1 &2077320884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108971546024152962, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
+  m_PrefabInstance: {fileID: 1518963374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2078302101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5751479518907358670, guid: 23a6b2c0eb844574bb871aa4cb3d371f, type: 3}
