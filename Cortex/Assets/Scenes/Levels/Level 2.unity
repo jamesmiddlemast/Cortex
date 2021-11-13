@@ -11149,8 +11149,7 @@ MonoBehaviour:
   StationaryTime: 1
   TurnSpeed: 1
   TurnTime: 4
-  CameraTargets:
-  - {fileID: 1427269952}
+  CameraTargets: []
   DeactivateTime: 2
   DeactivateTarget: {fileID: 1621278747}
   Spotlight: {fileID: 337898924}
@@ -17785,7 +17784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427269952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.43, z: 2.42}
+  m_LocalPosition: {x: 0, y: -1.88, z: 2.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1884798891}
@@ -31630,6 +31629,8 @@ MonoBehaviour:
   errorjumpsound: {fileID: 8300000, guid: 17b4de849837b114fa50fcfe1d21c8d4, type: 3}
   otherAudioSources:
   - {fileID: 781593358}
+  cluePickupClip: {fileID: 8300000, guid: 1f7eb5c527ebf9c4a899190205763240, type: 3}
+  cameraButtonClip: {fileID: 8300000, guid: f0234b90937cc0f4cb836f9e1a16980e, type: 3}
   musicVolume: 0.5
   ambientMusic: {fileID: 8300000, guid: ae3548b928e318349a74bb24cc8b37d9, type: 3}
 --- !u!114 &2104086250

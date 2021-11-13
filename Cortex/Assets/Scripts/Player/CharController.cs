@@ -48,6 +48,9 @@ public class CharController : MonoBehaviour
         public AudioClip errorjumpsound;
         public AudioSource[] otherAudioSources;
 
+        public AudioClip cluePickupClip;
+        public AudioClip cameraButtonClip;
+
     //AmbientMusic
         AudioSource musicAudioSource;
         public float musicVolume;
@@ -293,5 +296,13 @@ public class CharController : MonoBehaviour
                 otherAudioSources[0].volume = newvolume;
             }
         }
+    }
+
+    public void playCluePickup(){
+        audioSource.PlayOneShot(cluePickupClip);
+    }
+
+    public void playCameraSwitch(){
+        audioSource.PlayOneShot(cameraButtonClip);
     }
 }

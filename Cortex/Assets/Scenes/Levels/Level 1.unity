@@ -19641,7 +19641,9 @@ MonoBehaviour:
   visable_pause: 0
   CigImage: {fileID: 273376721}
   Cig_Full: {fileID: 2800000, guid: dfad60fb6875d444b82432bd9f6d02a7, type: 3}
+  Cig_Four: {fileID: 0}
   Cig_Mostly: {fileID: 2800000, guid: 0846e9fa98ab5bf48b247d3dc4f20d30, type: 3}
+  Cig_Two: {fileID: 0}
   Cig_Slightly: {fileID: 2800000, guid: 1c089c7e57ba9a945ad6b0f277a29d78, type: 3}
   Cig_Empty: {fileID: 2800000, guid: 91851a94c68a865478a976d8646ffaf1, type: 3}
   resetText: {fileID: 1986581429}
@@ -20579,6 +20581,8 @@ MonoBehaviour:
   footstep: {fileID: 8300000, guid: b7bb1e6920d13cd49bcf6bcdadaf7282, type: 3}
   jumpsound: {fileID: 8300000, guid: e0020835751d1d947b2dd1bc494719d5, type: 3}
   errorjumpsound: {fileID: 8300000, guid: 17b4de849837b114fa50fcfe1d21c8d4, type: 3}
+  otherAudioSources: []
+  cluePickupClip: {fileID: 8300000, guid: 1f7eb5c527ebf9c4a899190205763240, type: 3}
   musicVolume: 0.5
   ambientMusic: {fileID: 8300000, guid: ae3548b928e318349a74bb24cc8b37d9, type: 3}
 --- !u!114 &2104086250

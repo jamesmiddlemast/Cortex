@@ -30,6 +30,7 @@ public class CluesController : MonoBehaviour
             UIController.GetComponent<UIController>().ClueFound();
 
             audioSource.PlayOneShot(CluePickup);
+            other.GetComponent<CharController>().playCluePickup();
             this.gameObject.SetActive(false);
         }
     }

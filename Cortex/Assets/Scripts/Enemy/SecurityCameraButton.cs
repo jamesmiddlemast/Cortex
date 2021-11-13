@@ -26,6 +26,7 @@ public class SecurityCameraButton : MonoBehaviour
                 for(int i = 0; i < ControlledCameras.Length; i++){
                     ControlledCameras[i].GetComponent<SecurityCamera>().Deactivate();
                 }
+                other.GetComponent<CharController>().playCameraSwitch();
             }
         }
     }
