@@ -24,6 +24,9 @@ public class FieldOfView : MonoBehaviour
         playerRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(FOVRoutine());
         flashlight = gameObject.GetComponentInChildren<Light>();
+        if (radius == 0) {
+            radius = 7;
+        }
     }
 
     private IEnumerator FOVRoutine()

@@ -3514,7 +3514,7 @@ MonoBehaviour:
   Cig_Slightly: {fileID: 2800000, guid: 1c089c7e57ba9a945ad6b0f277a29d78, type: 3}
   Cig_Empty: {fileID: 2800000, guid: 91851a94c68a865478a976d8646ffaf1, type: 3}
   resetText: {fileID: 1072921807}
-  resetText2: {fileID: 0}
+  resetText2: {fileID: 1072921807}
 --- !u!114 &891757023
 MonoBehaviour:
   m_ObjectHideFlags: 0
