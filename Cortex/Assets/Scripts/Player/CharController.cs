@@ -50,11 +50,15 @@ public class CharController : MonoBehaviour
 
         public AudioClip cluePickupClip;
         public AudioClip cameraButtonClip;
+        public AudioClip tutorialClip;
 
     //AmbientMusic
         AudioSource musicAudioSource;
         public float musicVolume;
         public AudioClip ambientMusic;
+
+        public bool tutorialActive;
+        public GameObject tutorialObject;
 
     // Start is called before the first frame update
     void Start()
@@ -108,7 +112,7 @@ public class CharController : MonoBehaviour
         GameObject canvasObject = GameObject.FindGameObjectsWithTag("SettingsCanvas")[0];
         canvasObject.GetComponent<SettingsScript>().SetVolumeLevels();
 
-
+        tutorialActive = false;
     }
 
     // Update is called once per frame
@@ -117,6 +121,10 @@ public class CharController : MonoBehaviour
         //Check Pause/Unpause
         if (Input.GetKeyDown(KeyCode.P)){
             Pause();
+            if (tutorialActive){
+            tutorialObject.SetActive(false);
+            tutorialActive = false;
+            }
         }
 
         //Only get player input and update if game is not paused
@@ -164,6 +172,18 @@ public class CharController : MonoBehaviour
             //Check for R key
             if (Input.GetKeyDown(KeyCode.R)){
                 ExitLevel("Reset");
+            }
+        }
+        if (tutorialActive){
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Pause();
+                tutorialObject.SetActive(false);
+                tutorialActive = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Escape)){
+                Pause();
+                tutorialObject.SetActive(false);
+                tutorialActive = false;
             }
         }
     }
@@ -300,6 +320,11 @@ public class CharController : MonoBehaviour
 
     public void playCluePickup(){
         audioSource.PlayOneShot(cluePickupClip);
+    }
+
+    public void playTutorialPickup(){
+        audioSource.PlayOneShot(tutorialClip);
+        tutorialActive = true;
     }
 
     public void playCameraSwitch(){

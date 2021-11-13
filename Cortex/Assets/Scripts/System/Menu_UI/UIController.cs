@@ -38,6 +38,8 @@ public class UIController : MonoBehaviour
     public GameObject resetText;
     public GameObject resetText2;
 
+    public GameObject tutorialPopup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,5 +111,15 @@ public class UIController : MonoBehaviour
                 resetText2.GetComponent<Text>().enabled = true;
             }
         }
+    }
+
+    public void ShowTutorialImage(){
+        game_paused = true;
+        tutorialPopup.SetActive(true);
+    }
+
+    public void HideTutorialImage(){
+        game_paused = false;
+        tutorialPopup.SetActive(false);
     }
 }

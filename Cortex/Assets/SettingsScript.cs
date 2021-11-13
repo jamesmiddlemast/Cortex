@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsScript : MonoBehaviour
 {
@@ -19,8 +20,25 @@ public class SettingsScript : MonoBehaviour
     public GameObject EffectsVolumeText;
     public GameObject MusicVolumeText;
 
+    //Main Menu Sounds
+    GameObject soundGameObject;
+    AudioSource audioSource;
+    AudioSource audioMusicSource;
+    public AudioClip typeWriter;
+    public AudioClip titleMusic;
+    bool musicPlaying;
+
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu"){
+            musicPlaying = false;
+            soundGameObject = new GameObject("Sound");
+            audioSource = soundGameObject.AddComponent<AudioSource>();
+            audioMusicSource = soundGameObject.AddComponent<AudioSource>();
+        } else {
+            musicPlaying = true;
+        }
+
         //Get Volume from PlayerPrefs (or set both master and effects/music to 5 if no playerPrefs)
         masterVolume = PlayerPrefs.GetFloat("MasterVolume",5f);
         effectsVolume = PlayerPrefs.GetFloat("EffectsVolume",5f);
@@ -42,7 +60,10 @@ public class SettingsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!musicPlaying){
+            musicPlaying = true;
+            audioMusicSource.PlayOneShot(titleMusic);
+        }
     }
 
     public void ToggleFullscreen(){
@@ -96,6 +117,11 @@ public class SettingsScript : MonoBehaviour
             playerObjectScript.setMusicVolume(totalMusicVolume);
             playerObjectScript.setEffectsVolume(totalEffectsVolume);
         }
+
+        if (SceneManager.GetActiveScene().name == "MainMenu"){
+            audioSource.volume = totalEffectsVolume;
+            audioMusicSource.volume = totalMusicVolume;
+        }
     }
 
     public void ChangeMasterVolume(int amount){
@@ -126,5 +152,9 @@ public class SettingsScript : MonoBehaviour
             musicVolume = 5;
         }
         SetVolumeLevels();
+    }
+
+    public void PlayTypeWriter(){
+        audioSource.PlayOneShot(typeWriter);
     }
 }

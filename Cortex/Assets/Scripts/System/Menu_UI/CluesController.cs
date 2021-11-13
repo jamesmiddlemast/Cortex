@@ -15,7 +15,6 @@ public class CluesController : MonoBehaviour
     {
         soundGameObject = new GameObject("Sound");
         audioSource = soundGameObject.AddComponent<AudioSource>();
-
     }
 
     // Update is called once per frame

@@ -6,25 +6,27 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    GameObject soundGameObject;
-    AudioSource audioSource;
-    public AudioClip typeWriter;
     float typeWriterDelay;
     float currentTypeWriterDelay;
     bool startClicked;
 
+    public GameObject SettingsObject;
+    SettingsScript settingsscriptcomponent;
+
+    bool musicPlaying;
+    public AudioClip titleMusic;
+
     public GameObject canvasObject;
     private void Start(){
         canvasObject = GameObject.FindGameObjectsWithTag("SettingsCanvas")[0];
-        soundGameObject = new GameObject("Sound");
-        audioSource = soundGameObject.AddComponent<AudioSource>();
-        typeWriterDelay = 1f;
+        typeWriterDelay = 2f;
         currentTypeWriterDelay = typeWriterDelay;
         startClicked = false;
+        settingsscriptcomponent = SettingsObject.GetComponent<SettingsScript>();
     }
     public void StartButton(){
-        audioSource.PlayOneShot(typeWriter);
         startClicked = true;
+        settingsscriptcomponent.PlayTypeWriter();
     }
 
     public void ExitButton(){

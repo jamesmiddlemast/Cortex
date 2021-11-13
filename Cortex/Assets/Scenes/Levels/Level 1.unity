@@ -1173,6 +1173,8 @@ MonoBehaviour:
   MasterVolumeText: {fileID: 271611200}
   EffectsVolumeText: {fileID: 1067608790}
   MusicVolumeText: {fileID: 1334501131}
+  typeWriter: {fileID: 0}
+  titleMusic: {fileID: 0}
 --- !u!114 &195550441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6223,7 +6225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f79e13a8bb00ad4ea260f68a4e56e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: VictoryMenu
+  NextLevel: Level 2
 --- !u!222 &1187665301
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19648,6 +19650,7 @@ MonoBehaviour:
   Cig_Empty: {fileID: 2800000, guid: 91851a94c68a865478a976d8646ffaf1, type: 3}
   resetText: {fileID: 1986581429}
   resetText2: {fileID: 735884690}
+  tutorialPopup: {fileID: 0}
 --- !u!114 &1978988723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20583,8 +20586,12 @@ MonoBehaviour:
   errorjumpsound: {fileID: 8300000, guid: 17b4de849837b114fa50fcfe1d21c8d4, type: 3}
   otherAudioSources: []
   cluePickupClip: {fileID: 8300000, guid: 1f7eb5c527ebf9c4a899190205763240, type: 3}
+  cameraButtonClip: {fileID: 0}
+  tutorialClip: {fileID: 0}
   musicVolume: 0.5
   ambientMusic: {fileID: 8300000, guid: ae3548b928e318349a74bb24cc8b37d9, type: 3}
+  tutorialActive: 0
+  tutorialObject: {fileID: 0}
 --- !u!114 &2104086250
 MonoBehaviour:
   m_ObjectHideFlags: 0
