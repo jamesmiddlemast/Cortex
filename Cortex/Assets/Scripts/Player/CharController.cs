@@ -280,10 +280,14 @@ public class CharController : MonoBehaviour
     }
 
     public void setMusicVolume(float newvolume){
-        musicAudioSource.volume = newvolume;
+        if (musicAudioSource != null){
+            musicAudioSource.volume = newvolume;
+        }
     }
 
     public void setEffectsVolume(float newvolume){
-        audioSource.volume = newvolume;
+        if (audioSource != null){
+            audioSource.volume = newvolume;
+        }
     }
 }
