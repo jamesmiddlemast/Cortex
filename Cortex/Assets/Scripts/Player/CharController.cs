@@ -46,6 +46,7 @@ public class CharController : MonoBehaviour
         public AudioClip jumpsound;
     //Error Jump
         public AudioClip errorjumpsound;
+        public AudioSource[] otherAudioSources;
 
     //AmbientMusic
         AudioSource musicAudioSource;
@@ -288,6 +289,9 @@ public class CharController : MonoBehaviour
     public void setEffectsVolume(float newvolume){
         if (audioSource != null){
             audioSource.volume = newvolume;
+            if (otherAudioSources.Length > 0){
+                otherAudioSources[0].volume = newvolume;
+            }
         }
     }
 }
