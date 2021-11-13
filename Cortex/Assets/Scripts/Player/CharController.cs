@@ -294,7 +294,7 @@ public class CharController : MonoBehaviour
             currentFootstepDelay = footstepDelay;
             //Get random Footstep and play it.
             int i = Random.Range(0, footstepClips.Length);
-            Debug.Log("Footstep: " + i);
+            //Debug.Log("Footstep: " + i);
             audioSource.PlayOneShot(footstepClips[i]);
         }
     }

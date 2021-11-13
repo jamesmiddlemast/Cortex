@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9257b3ecffffd7d4b9e522f009532c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyController: {fileID: 0}
 --- !u!1 &8341333055253804241
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +156,102 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!82 &5671185753735980221
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108971546024152962}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.5
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &6499835481378215140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,6 +380,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5751479518907358670}
     - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepSource
+      value: 
+      objectReference: {fileID: 5671185753735980221}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
       propertyPath: defaultMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 511911831ab53bc4bb3ec0a81c5a8368, type: 2}
@@ -290,6 +391,30 @@ PrefabInstance:
       propertyPath: glowingMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 8cf7e9cf08bd6ec46b2d9b6d13f6360a, type: 2}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepClips.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b12fc5f393ea9f4186b9b03023fc02b, type: 3}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6647746584065ca45bb4c0581d64ff29, type: 3}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 598b797cad50bfd4da82bb6d13ec5c40, type: 3}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6847c2d3d0cdea746921b1e269d8b6e4, type: 3}
+    - target: {fileID: 4281705826746179677, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+      propertyPath: footstepClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 188a1a72869a18d449ee84c9562bf2a3, type: 3}
     - target: {fileID: 4281705828555936710, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
       propertyPath: m_Name
       value: Enemy_WithSightLines
@@ -348,6 +473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+--- !u!1 &5108971546024152962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4281705826746179670, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}
+  m_PrefabInstance: {fileID: 9046916152721420244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5108971546024152967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281705826746179667, guid: 7b2aef87243efad449efe1ac5565ea17, type: 3}

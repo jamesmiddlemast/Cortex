@@ -25,6 +25,12 @@ public class EnemyController : MonoBehaviour
 
     //Reference to the Enemy's body.
     public GameObject EnemyBody;
+
+    //For Footsteps
+    public AudioSource footstepSource;
+    public AudioClip[] footstepClips;
+    public float footstepDelay;
+    float currentFootstepDelay;
     
 
     [SerializeField]
@@ -54,8 +60,12 @@ public class EnemyController : MonoBehaviour
             enemyState = "Finished";
         } else {
             enemyState = "Patrolling";
+            currentFootstepDelay = 0;
         }
         isGlowing = false;
+
+        footstepDelay = 0.4f;
+        currentFootstepDelay = footstepDelay;
     }
 
     public bool isWalking(){
@@ -98,6 +108,15 @@ public class EnemyController : MonoBehaviour
     }
 
     void Patrol(){
+        //FootstepNoise
+        currentFootstepDelay -= Time.deltaTime;
+        if (currentFootstepDelay <= 0){
+            int i = Random.Range(0, footstepClips.Length);
+            //Debug.Log("Footstep: " + i);
+            footstepSource.PlayOneShot(footstepClips[i]);
+            currentFootstepDelay = footstepDelay;
+        }
+
         //Seek out the next waypoint
         //Get the vector towards the next waypoint
         Vector3 direction = waypoints[currentWaypoint].transform.position - transform.position;
@@ -158,6 +177,7 @@ public class EnemyController : MonoBehaviour
         if (currentFaceTime <= 0){
             transform.rotation = targetRotation;
             enemyState = "Patrolling";
+            currentFootstepDelay = 0;
         }
     }
 
@@ -165,5 +185,9 @@ public class EnemyController : MonoBehaviour
         Vector3 dis = new Vector3(0f,-100f,0f);
         transform.position += dis;
         enemyState = "Finished";
+    }
+
+    public void SetFootstepVolume(float newVolume){
+        footstepSource.volume = newVolume;
     }
 }

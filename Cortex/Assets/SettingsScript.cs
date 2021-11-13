@@ -29,6 +29,9 @@ public class SettingsScript : MonoBehaviour
     public AudioClip buttonClip;
     bool musicPlaying;
 
+    //Enemy Footstep Volumes
+    public GameObject[] Enemys;
+
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu"){
@@ -56,6 +59,7 @@ public class SettingsScript : MonoBehaviour
             playerObject = null;
         }
 
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
         //Set initial Volumes for all components
         SetVolumeLevels();
     }
@@ -126,6 +130,12 @@ public class SettingsScript : MonoBehaviour
             audioMusicSource.volume = totalMusicVolume;
         } else {
             audioSource.volume = totalEffectsVolume;
+        }
+
+        if (Enemys.Length > 0){
+            for (int i=0;i<Enemys.Length;i++){
+                Enemys[i].GetComponent<EnemyController>().SetFootstepVolume(totalEffectsVolume);
+            }
         }
     }
 

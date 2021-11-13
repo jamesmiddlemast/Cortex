@@ -1614,7 +1614,6 @@ GameObject:
   m_Component:
   - component: {fileID: 322908187}
   - component: {fileID: 322908189}
-  - component: {fileID: 322908188}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1636,14 +1635,6 @@ Transform:
   m_Father: {fileID: 1230374302}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &322908188
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322908186}
-  m_Enabled: 1
 --- !u!20 &322908189
 Camera:
   m_ObjectHideFlags: 0
@@ -5012,6 +5003,7 @@ MonoBehaviour:
   typeWriter: {fileID: 8300000, guid: 1f7eb5c527ebf9c4a899190205763240, type: 3}
   titleMusic: {fileID: 8300000, guid: 8e28fb825dc312c4e8e26e87811a0135, type: 3}
   buttonClip: {fileID: 8300000, guid: 2b283a63c2be1bf48ae890a9bc1c3ec1, type: 3}
+  Enemys: []
 --- !u!114 &1020012737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18909,6 +18901,7 @@ GameObject:
   - component: {fileID: 2104086255}
   - component: {fileID: 2104086256}
   - component: {fileID: 2104086257}
+  - component: {fileID: 2104086258}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -19093,6 +19086,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footstep: {fileID: 8300000, guid: b7bb1e6920d13cd49bcf6bcdadaf7282, type: 3}
+--- !u!81 &2104086258
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104086248}
+  m_Enabled: 1
 --- !u!1 &2130678681
 GameObject:
   m_ObjectHideFlags: 0
