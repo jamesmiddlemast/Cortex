@@ -82,6 +82,9 @@ public class CharController : MonoBehaviour
 
         //Reset Jumps;
         health_jumps = 3;
+        if (SceneManager.GetActiveScene().name == "Level 2"){
+            health_jumps = 5;
+        }
 
         //FOV Script
         FOVScript = this.gameObject.GetComponent<PlayerFieldOfView>();

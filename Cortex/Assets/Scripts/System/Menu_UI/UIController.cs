@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -28,7 +29,9 @@ public class UIController : MonoBehaviour
     //Cig image
     public GameObject CigImage;
     public Texture Cig_Full;
+    public Texture Cig_Four;
     public Texture Cig_Mostly;
+    public Texture Cig_Two;
     public Texture Cig_Slightly;
     public Texture Cig_Empty;
 
@@ -75,17 +78,36 @@ public class UIController : MonoBehaviour
 
     public void UpdateCig(int jumps_left){
         RawImage CigImageImage = CigImage.GetComponent<RawImage>();
-        if (jumps_left == 3){
-            CigImageImage.texture = Cig_Full;
-        } else if (jumps_left == 2){
-            CigImageImage.texture = Cig_Mostly;
-        } else if (jumps_left == 1){
-            CigImageImage.texture = Cig_Slightly;
-        } else if (jumps_left == 0){
-            CigImageImage.texture = Cig_Empty;
-            //Displau [R]eset? Text
-            resetText.GetComponent<Text>().enabled = true;
-            resetText2.GetComponent<Text>().enabled = true;
+        if (SceneManager.GetActiveScene().name == "Level 2"){
+            if (jumps_left == 5){
+                CigImageImage.texture = Cig_Full;
+            } else if (jumps_left == 4){
+                CigImageImage.texture = Cig_Four;
+            } else if (jumps_left == 3){
+                CigImageImage.texture = Cig_Mostly;
+            } else if (jumps_left == 2){
+                CigImageImage.texture = Cig_Two;
+            } else if (jumps_left == 1){
+                CigImageImage.texture = Cig_Slightly;
+            } else if (jumps_left == 0){
+                CigImageImage.texture = Cig_Empty;
+                //Displau [R]eset? Text
+                resetText.GetComponent<Text>().enabled = true;
+                resetText2.GetComponent<Text>().enabled = true;
+            }
+        } else {
+            if (jumps_left == 3){
+                CigImageImage.texture = Cig_Full;
+            } else if (jumps_left == 2){
+                CigImageImage.texture = Cig_Mostly;
+            } else if (jumps_left == 1){
+                CigImageImage.texture = Cig_Slightly;
+            } else if (jumps_left == 0){
+                CigImageImage.texture = Cig_Empty;
+                //Displau [R]eset? Text
+                resetText.GetComponent<Text>().enabled = true;
+                resetText2.GetComponent<Text>().enabled = true;
+            }
         }
     }
 }

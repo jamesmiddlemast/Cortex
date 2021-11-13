@@ -66,17 +66,21 @@ public class SecurityCamera : MonoBehaviour
         if (currentStationaryTime > 0){
             currentStationaryTime -= Time.deltaTime;
         } else {
-            //Turn to next Waypoint
-            int nextWaypoint = currentWaypoint + 1;
-            if (nextWaypoint < CameraTargets.Length){
-                //If more CameraTargets, move to the next
-                currentWaypoint ++;
+            if (CameraTargets.Length == 0){
+                currentStationaryTime = StationaryTime;
+            } else {
+                //Turn to next Waypoint
+                int nextWaypoint = currentWaypoint + 1;
+                if (nextWaypoint < CameraTargets.Length){
+                    //If more CameraTargets, move to the next
+                    currentWaypoint ++;
+                }
+                else { //If at the end, move back
+                    currentWaypoint = 0;
+                }
+                cameraState = "Turning";
+                currentTurnTime = TurnTime;
             }
-            else { //If at the end, move back
-                currentWaypoint = 0;
-            }
-            cameraState = "Turning";
-            currentTurnTime = TurnTime;
         }
     }
 
