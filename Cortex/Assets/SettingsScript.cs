@@ -26,6 +26,7 @@ public class SettingsScript : MonoBehaviour
     AudioSource audioMusicSource;
     public AudioClip typeWriter;
     public AudioClip titleMusic;
+    public AudioClip buttonClip;
     bool musicPlaying;
 
     void Start()
@@ -37,6 +38,8 @@ public class SettingsScript : MonoBehaviour
             audioMusicSource = soundGameObject.AddComponent<AudioSource>();
         } else {
             musicPlaying = true;
+            soundGameObject = new GameObject("Sound");
+            audioSource = soundGameObject.AddComponent<AudioSource>();
         }
 
         //Get Volume from PlayerPrefs (or set both master and effects/music to 5 if no playerPrefs)
@@ -121,6 +124,8 @@ public class SettingsScript : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MainMenu"){
             audioSource.volume = totalEffectsVolume;
             audioMusicSource.volume = totalMusicVolume;
+        } else {
+            audioSource.volume = totalEffectsVolume;
         }
     }
 
@@ -132,6 +137,7 @@ public class SettingsScript : MonoBehaviour
             masterVolume = 5;
         }
         SetVolumeLevels();
+        audioSource.PlayOneShot(buttonClip);
     }
     
     public void ChangeEffectsVolume(int amount){
@@ -142,6 +148,7 @@ public class SettingsScript : MonoBehaviour
             effectsVolume = 5;
         }
         SetVolumeLevels();
+        audioSource.PlayOneShot(buttonClip);
     }
 
     public void ChangeMusicVolume(int amount){
@@ -152,6 +159,7 @@ public class SettingsScript : MonoBehaviour
             musicVolume = 5;
         }
         SetVolumeLevels();
+        audioSource.PlayOneShot(buttonClip);
     }
 
     public void PlayTypeWriter(){
