@@ -41,7 +41,8 @@ public class CharController : MonoBehaviour
         GameObject soundGameObject;
         AudioSource audioSource;
         public float playerVolume;
-        public AudioClip footstep;
+        public AudioClip[] footstepClips;
+
     //Jump Sound
         public AudioClip jumpsound;
     //Error Jump
@@ -291,7 +292,10 @@ public class CharController : MonoBehaviour
         if (currentFootstepDelay <= 0){
             //Reset cooldown and play sound
             currentFootstepDelay = footstepDelay;
-            audioSource.PlayOneShot(footstep);
+            //Get random Footstep and play it.
+            int i = Random.Range(0, footstepClips.Length);
+            Debug.Log("Footstep: " + i);
+            audioSource.PlayOneShot(footstepClips[i]);
         }
     }
 
@@ -300,7 +304,8 @@ public class CharController : MonoBehaviour
         //Reset footstepdelay
         currentFootstepDelay = footstepDelay;
         //Take a final step
-        audioSource.PlayOneShot(footstep);
+        int i = Random.Range(0, footstepClips.Length);
+        audioSource.PlayOneShot(footstepClips[i]);
     }
 
     public void setMusicVolume(float newvolume){

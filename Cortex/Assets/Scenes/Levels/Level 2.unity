@@ -32964,7 +32964,12 @@ MonoBehaviour:
   FOVScript: {fileID: 2104086250}
   footstepDelay: 0.48
   playerVolume: 1
-  footstep: {fileID: 8300000, guid: b7bb1e6920d13cd49bcf6bcdadaf7282, type: 3}
+  footstepClips:
+  - {fileID: 8300000, guid: 2b4456cdc2aafc54c8363970785ac581, type: 3}
+  - {fileID: 8300000, guid: ffb06b9d5b2b8bb44a8bab7b5243eaeb, type: 3}
+  - {fileID: 8300000, guid: 92845a772a8e54749ac766200cb9c5e5, type: 3}
+  - {fileID: 8300000, guid: e0c6d44329026fb41b8bba1a3a8efdc9, type: 3}
+  - {fileID: 8300000, guid: a80ae345e05fbb348b1ce6e751afb516, type: 3}
   jumpsound: {fileID: 8300000, guid: b15d2cd144e772d48b9400f89f23db6e, type: 3}
   errorjumpsound: {fileID: 8300000, guid: 17b4de849837b114fa50fcfe1d21c8d4, type: 3}
   otherAudioSources:
